@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-gray-800 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
+      className={`bg-gray-800 left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
         isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
       }`}
     >

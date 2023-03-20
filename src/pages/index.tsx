@@ -1,29 +1,29 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
-import statesmenPic from '../../public/statesmen.png';
-import tygkoPic from '../../public/tygko.png';
-import githubPic from '../../public/github.png';
-import { useEffect, useState, useRef } from 'react';
-import { Inter } from 'next/font/google';
-import Navbar from '../components/Navbar';
+import Head from "next/head";
+import Image from "next/image";
+import styles from "@/styles/Home.module.css";
+import statesmenPic from "../../public/statesmen.png";
+import tygkoPic from "../../public/tygko.png";
+import githubPic from "../../public/github.png";
+import { useEffect, useState, useRef } from "react";
+import { Inter } from "next/font/google";
+import Navbar from "../components/Navbar";
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(): JSX.Element {
-  const [picSrc, setPicSrc] = useState('');
+  const [picSrc, setPicSrc] = useState("");
   const imgRef = useRef(null);
 
   useEffect(() => {
-    const query = async (data = { inputs: 'Astronaut riding a horse' }) => {
+    const query = async (data = { inputs: "Astronaut riding a horse" }) => {
       const response = await fetch(
-        'https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5',
+        "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5",
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: "Bearer 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",
           },
-          method: 'POST',
+          method: "POST",
           body: JSON.stringify(data),
         }
       );
@@ -50,25 +50,25 @@ export default function Home(): JSX.Element {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`container mx-auto px-4 py-8 pt-20 ${inter.className}`}>
+      <main className={`container mx-auto px-4 py-8 pt-28 ${inter.className}`}>
         <Navbar />
-        <div className="hero mb-8">
-          <div className="hero-content text-center">
-            <h1 className="text-4xl font-bold mb-4">Hey!</h1>
-            <p className="text-xl">Welcome to my website.</p>
-            <p className="text-xl">
-              Served to you from the RaspberryPi located under the couch in my
-              living room.
-            </p>
+        <div className="h-screen mb-8">
+          <div className="relative inset-y-1/4">
+            <div className="h-fit w-3/6 inline-block">
+              <h1 className="text-4xl font-bold mb-4">Hey!</h1>
+              <p className="text-xl ">Welcome to my website.</p>
+              <p className="text-xl max-w-md leading-7">
+                Served to you from the RaspberryPi located under the couch in my
+                living room.
+              </p>
+            </div>
+            <img
+              ref={imgRef}
+              src={picSrc}
+              className="mx-auto rounded-full shadow-md w-3/6 inline-block"
+              alt="Software Developer Tim Ferrari smiling."
+            />
           </div>
-          <img
-            width="500"
-            height="500"
-            ref={imgRef}
-            src={picSrc}
-            className="mx-auto rounded-full shadow-md"
-            alt="Software Developer Tim Ferrari smiling."
-          />
         </div>
         <div className="projects mb-8" id="projects">
           <h2 className="text-3xl font-bold mb-2">Projects</h2>
