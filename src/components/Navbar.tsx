@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
