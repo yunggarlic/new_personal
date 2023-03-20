@@ -34,14 +34,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-gray-800 left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
+      className={`bg-gray-800 max-h-20 left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
         isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
       }`}
     >
       <div className="container mx-auto">
-        <div className="flex justify-between items-center">
-          <a href="#" className="text-white text-xl font-bold">
-            Your Brand
+        <div className="flex flex-row-reverse justify-between items-center">
+          <a
+            href="#"
+            className="text-white text-xl font-bold whitespace-nowrap"
+          >
+            Tim Ferrari
           </a>
           <div className="md:hidden">
             <button
@@ -58,25 +61,25 @@ const Navbar = () => {
           >
             <a
               href="#hero"
-              className="block py-2 px-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
             >
               Home
             </a>
             <a
               href="#projects"
-              className="block py-2 px-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
             >
               Projects
             </a>
             <a
               href="#skills"
-              className="block py-2 px-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="block py-2 px-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
             >
               Contact
             </a>
