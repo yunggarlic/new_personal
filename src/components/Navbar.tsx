@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Navbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -21,10 +21,10 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPosition]);
 
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`bg-gray-800 max-h-20 left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
-        isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
+        isHidden ? "-translate-y-full fixed top-0 w-full" : "fixed top-0 w-full"
       }`}
     >
       <div className="container mx-auto">
@@ -51,12 +51,23 @@ const Navbar: React.FC = () => {
               className="text-white hover:text-gray-300 focus:outline-none"
               onClick={toggleMobileMenu}
             >
-              <i className="fas fa-bars"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2zm0 5h14a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2zm0 5h14a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </button>
           </div>
           <div
             className={`${
-              mobileMenuOpen ? 'block' : 'hidden'
+              mobileMenuOpen ? "block" : "hidden"
             } absolute top-full left-0 w-full bg-gray-800 md:static md:bg-transparent md:flex space-x-4 mt-2 md:mt-0`}
           >
             <a

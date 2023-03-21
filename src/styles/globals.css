@@ -64,8 +64,11 @@ nav{
   height: var(--nav-height);
 }
 
-main{
-  padding-top: var(--nav-height);
+/* main{} */
+
+.hero{
+  margin-bottom: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
 }
 
 a {
