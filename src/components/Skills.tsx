@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills: React.FC = () => {
   return (
-    <div className="h-screen mb-8" id="skills">
+    <section className="h-screen mb-8" id="skills">
       <h2 className="text-3xl font-bold">Skills</h2>
       <div className="grid grid-cols-3 gap-4">
         <div>
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

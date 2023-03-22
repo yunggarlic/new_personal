@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.css";
 
 import { useEffect, useState, useRef } from "react";
 import { Inter } from "next/font/google";
-import { Navbar, Hero, Projects, Skills } from "../components";
+import { Navbar, Hero, Projects, Skills, About, Work } from "../components";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
@@ -51,6 +51,8 @@ export default function Home(): JSX.Element {
       <main className={`container px-12 mx-auto ${inter.className}`}>
         <Navbar />
         <Hero />
+        <About />
+        <Work />
         <Projects />
         <Skills />
         <div className="h-screen" id="contact">

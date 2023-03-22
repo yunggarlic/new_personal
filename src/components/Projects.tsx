@@ -6,7 +6,7 @@ import githubPic from "../../public/github.png";
 
 const Projects: React.FC = () => {
   return (
-    <div className="h-screen mb-8" id="projects">
+    <section className="h-screen mb-8" id="projects">
       <h2 className="text-3xl font-bold mb-2">Projects</h2>
       <span className="text-lg mb-4">Check out some of my work</span>
       <div className="project-list grid grid-cols-3 gap-4">
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
