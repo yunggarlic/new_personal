@@ -1,39 +1,15 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
 
-import { useEffect, useState, useRef } from "react";
-import { Inter } from "next/font/google";
-import { Navbar, Hero, Projects, Skills, About, Work } from "../components";
+import { useEffect, useState, useRef } from 'react';
+import { Inter } from 'next/font/google';
+import { Navbar, Hero, Projects, Skills, About, Work } from '../components';
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home(): JSX.Element {
-  const [picSrc, setPicSrc] = useState("");
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    const query = async (data = { inputs: "Astronaut riding a horse" }) => {
-      const response = await fetch(
-        "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5",
-        {
-          headers: {
-            Authorization: "Bearer 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",
-          },
-          method: "POST",
-          body: JSON.stringify(data),
-        }
-      );
-      const results = await response.blob();
-      const src = URL.createObjectURL(results);
-
-      setPicSrc(src);
-    };
-
-    query();
-  }, []);
-
   return (
     <>
       <Head>
