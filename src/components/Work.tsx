@@ -39,6 +39,8 @@ const Work: React.FC = () => {
     },
   ];
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {};
+
   return (
     <section
       className="h-screen flex items-center pb-24 max-w-3xl mx-auto"
@@ -64,7 +66,9 @@ const Work: React.FC = () => {
             {jobs.map((job, i) => (
               <Job
                 {...job}
-                className={`${currentJob === i ? 'active' : 'hidden'}`}
+                className={`transition-opacity delay-500 duration-500 ${
+                  currentJob === i ? 'active opacity-100' : 'hidden opacity-0'
+                } `}
                 key={i}
               />
             ))}
