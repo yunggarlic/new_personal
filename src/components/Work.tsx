@@ -39,35 +39,35 @@ const Work: React.FC = () => {
     },
   ];
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {};
-
   return (
     <section
       className="h-screen flex items-center pb-24 max-w-3xl mx-auto"
       id="work"
     >
-      <div className="h-80 my-auto">
+      <div className="h-80 w-full my-auto">
         <h2 className="text-3xl pb-8">Work Experience</h2>
         <div className="work-inner flex h-full">
-          <div className="tab-list flex flex-col">
+          <div className="tab-list flex flex-col mr-6">
             {jobs.map((job, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentJob(i)}
                 className={`${
                   currentJob === i ? 'active ' : ''
-                } text-left px-6 text-xs w-max h-12`}
+                } w-full whitespace-nowrap text-left px-6 text-xs h-12 transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20`}
               >
                 {job.jobTitle}
               </button>
             ))}
           </div>
-          <div className="job-list w-full">
+          <div className="job-list relative w-full">
             {jobs.map((job, i) => (
               <Job
                 {...job}
-                className={`transition-opacity delay-500 duration-500 ${
-                  currentJob === i ? 'active opacity-100' : 'hidden opacity-0'
+                className={`absolute transition-opacity duration-500 ${
+                  currentJob === i
+                    ? 'visible opacity-100'
+                    : 'invisible opacity-0'
                 } `}
                 key={i}
               />

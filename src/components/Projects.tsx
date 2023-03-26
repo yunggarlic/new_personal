@@ -1,47 +1,84 @@
-import React from "react";
-import Image from "next/image";
-import statesmenPic from "../../public/statesmen.png";
-import tygkoPic from "../../public/tygko.png";
-import githubPic from "../../public/github.png";
+import React from 'react';
+import Image, { StaticImageData } from 'next/image';
+import statesmenPic from '../../public/statesmen.png';
+import tygkoPic from '../../public/tygko.png';
+import githubPic from '../../public/github.png';
+
+const projectProps = [
+  {
+    projectTitle: 'The Statesmen Podcast App',
+    description:
+      'A podcast app for the Statesmen Podcast. Built with React, and Material UI',
+    link: 'statesmenpodcast.com',
+    picSrc: statesmenPic,
+    picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
+    className: '',
+  },
+  {
+    projectTitle: 'Aether',
+    description:
+      'Aether is a multiplayer music game built with React and Socket.io',
+    link: 'aether.timferrari.com',
+    picSrc: tygkoPic,
+    picAlt: 'A screenshot of the home page of the Aether App.',
+    className: '',
+  },
+];
 
 const Projects: React.FC = () => {
   return (
     <section className="h-screen mb-8" id="projects">
       <h2 className="text-3xl font-bold mb-2">Projects</h2>
       <span className="text-lg mb-4">Check out some of my work</span>
-      <div className="project-list grid grid-cols-3 gap-4">
-        <div>
-          <h3 className="text-2xl mb-2">The Statesmen Podcast App</h3>
-          <Image
-            width="500"
-            height="500"
-            src={statesmenPic}
-            alt="A screenshot of the home page of the Statesmen Podcast App."
-            className="rounded shadow-md"
-          />
-        </div>
-        <div>
-          <h3 className="text-2xl mb-2">TYGKO - A Musicians Website</h3>
-          <Image
-            width="500"
-            height="500"
-            src={tygkoPic}
-            alt="A screenshot of the home page of the TYGKO website."
-            className="rounded shadow-md"
-          />
-        </div>
-        <div>
-          <h3 className="text-2xl mb-2">Check out my Github for more</h3>
-          <Image
-            width="500"
-            height="500"
-            src={githubPic}
-            alt="Github Logo"
-            className="rounded shadow-md"
-          />
-        </div>
+      <div className="mt-8 flex flex-col">
+        {projectProps.map((project, i) => (
+          <FeaturedProject key={i} {...project} />
+        ))}
       </div>
     </section>
+  );
+};
+
+interface ProjectProps {
+  projectTitle: string;
+  description: string;
+  link: string;
+  picSrc: StaticImageData;
+  picAlt: string;
+  className: string;
+}
+
+const FeaturedProject: React.FC<ProjectProps> = ({
+  projectTitle,
+  description,
+  link,
+  picSrc,
+  picAlt,
+  className,
+}) => {
+  return (
+    <div
+      className={`flex relative h-72 py-4 mb-12 overflow-hidden ${className}`}
+    >
+      <div className="w-3/5 z-10">
+        <h2 className="text-xl mb-4">
+          <a href={link}>{projectTitle}</a>
+        </h2>
+        <div className="py-8 px-4 rounded shadow-lg bg-blue-900 text-slate-200 dark:text-black dark:bg-slate-400">
+          <p>{description}</p>
+        </div>
+      </div>
+      <div className="w-1/2 absolute left-1/2 z-0 rounded overflow-hidden">
+        <a href={link} className="relative group">
+          <Image
+            alt={picAlt}
+            src={picSrc}
+            className="transition duration-300 ease-in-out"
+          />
+          <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
+        </a>
+      </div>
+    </div>
   );
 };
 

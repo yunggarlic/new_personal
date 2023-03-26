@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import picSrc from "../../public/me.jpg";
+import React from 'react';
+import Image from 'next/image';
+import picSrc from '../../public/me.jpg';
 
 const About: React.FC = () => {
   return (
@@ -12,16 +12,16 @@ const About: React.FC = () => {
           is one of the big ones. My interest in computers and programming
           started from a young age, but had always rejected the idea of making
           it my career. After working in the film industry for 6 years (and a
-          pandemic), I decided to shift gears and pursue a career in software
-          engineering.
+          pandemic), I shifted gears to pursue a career in software engineering
+          and web development and completed the curriculum at{' '}
+          <a>Fullstack Academy.</a>
         </p>
         <p className="text-md pt-4">
           Fast forward to today, I am developing websites and advertising
           solutions at <a href="criticalmass.com">Critical Mass</a> where I am
           bringing large legacy websites to next generation frameworks. I am
           constantly keeping my ear to the ground and looking to utilize the
-          latest technology in my workflow. I believe in the power of open
-          source and am always looking to contribute to the community.
+          latest technology in my workflow.
         </p>
         <p className="text-md pt-4">
           Here are a few technologies I've been working with recently:
