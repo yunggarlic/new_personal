@@ -2,12 +2,12 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <section className="h-screen" id="contact">
-      <h2 className="text-3xl font-bold">Contact</h2>
+    <section className="pb-48 flex flex-col items-center" id="contact">
+      <h2 className="text-3xl font-bold mb-8">Contact</h2>
       <span>
-        I'm always looking for new opportunities. Let's keep in touch!
+        Let's get in touch! I'm always looking for new opportunities. 
       </span>
-      <a href="mailto:ferrari.tim.v@gmail.com">Say Hi!</a>
+      <a className="mt-12 px-8 py-4 border-2" href="mailto:ferrari.tim.v@gmail.com">Say Hi!</a>
     </section>
   );
 };

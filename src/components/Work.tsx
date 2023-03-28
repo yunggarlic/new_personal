@@ -41,20 +41,20 @@ const Work: React.FC = () => {
 
   return (
     <section
-      className="h-screen flex items-center pb-24 max-w-3xl mx-auto"
+      className="flex items-center h-screen"
       id="work"
     >
-      <div className="h-80 w-full my-auto">
-        <h2 className="text-3xl pb-8">Work Experience</h2>
-        <div className="work-inner flex h-full">
-          <div className="tab-list flex flex-col mr-6">
+      <div className="w-full my-auto">
+        <h2 className="pb-8">Work Experience</h2>
+        <div className="work-inner flex flex-col tablet:flex-row h-full space-y-8">
+          <div className="tab-list flex justify-between gap-4 tablet:flex-col tablet:mr-6">
             {jobs.map((job, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentJob(i)}
                 className={`${
-                  currentJob === i ? 'active ' : ''
-                } w-full whitespace-nowrap text-left px-6 text-xs h-12 transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20`}
+                  currentJob === i ? 'active bg-blue-500/10 dark:bg-blue-500/20' : ''
+                } w-full rounded tablet:whitespace-nowrap text-left p-4 tablet:px-6 text-xs tablet:h-12 transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20`}
               >
                 {job.jobTitle}
               </button>
@@ -64,10 +64,10 @@ const Work: React.FC = () => {
             {jobs.map((job, i) => (
               <Job
                 {...job}
-                className={`absolute transition-opacity duration-500 ${
+                className={`transition-opacity duration-500 ${
                   currentJob === i
-                    ? 'visible opacity-100'
-                    : 'invisible opacity-0'
+                    ? 'visible opacity-100 h-full'
+                    : 'invisible opacity-0 h-0'
                 } `}
                 key={i}
               />
@@ -99,7 +99,7 @@ const Job: React.FC<JobProps> = ({
   return (
     <div className={`job ${className}`}>
       <h3 className="leading-8">
-        <span>{jobTitle} </span>@<a> {company}</a>
+        <span>{jobTitle} </span><a className="block text-lg"> {company}</a>
       </h3>
       <p className="text-sm pb-4">
         {startDate} - {endDate}

@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`bg-gray-800 max-h-20 left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
+      className={`flex items-center transparent left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
         isHidden ? "-translate-y-full fixed top-0 w-full" : "fixed top-0 w-full"
       }`}
     >
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
           >
             Tim Ferrari
           </a>
-          <div className="md:hidden">
+          <div className="md:hidden h-6">
             <button
               className="text-white hover:text-gray-300 focus:outline-none"
               onClick={toggleMobileMenu}

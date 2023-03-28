@@ -27,10 +27,10 @@ const projectProps = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="h-screen mb-8" id="projects">
-      <h2 className="text-3xl font-bold mb-2">Projects</h2>
-      <span className="text-lg mb-4">Check out some of my work</span>
-      <div className="mt-8 flex flex-col">
+    <section className="space-y-4" id="projects">
+      <h2 className="">Projects</h2>
+      <p className="">Check out some of my work</p>
+      <div className="flex flex-col">
         {projectProps.map((project, i) => (
           <FeaturedProject key={i} {...project} />
         ))}

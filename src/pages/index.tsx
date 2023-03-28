@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
+import Head from "next/head";
+import Image from "next/image";
+import styles from "@/styles/Home.module.css";
 
-import { useEffect, useState, useRef } from 'react';
-import { Inter } from 'next/font/google';
+import { useEffect, useState, useRef } from "react";
+import { Roboto_Mono } from "next/font/google";
 import {
   Navbar,
   Hero,
@@ -12,10 +12,10 @@ import {
   About,
   Work,
   Contact,
-} from '../components';
+} from "../components";
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Home(): JSX.Element {
   return (
@@ -24,16 +24,16 @@ export default function Home(): JSX.Element {
         <title>Tim Ferrari | Software Developer</title>
         <meta
           name="description"
-          content="Tim Ferrari is a software developer "
+          content="Discover the world of software development with Tim Ferrari, a seasoned software developer with expertise in multiple programming languages and platforms."
         />
         <meta
           name="viewport"
-          content="Discover the world of software development with Tim Ferrari, a seasoned software developer with expertise in multiple programming languages and platforms."
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`container px-12 mx-auto ${inter.className}`}>
-        <Navbar />
+      <Navbar />
+      <main className={`max-w-5xl mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}>
         <Hero />
         <About />
         <Work />
