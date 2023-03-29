@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className={`max-w-5xl mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}>
+      <main className={`max-w-5xl bg-stars-tall bg-right-top mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}>
         <Hero />
         <About />
         <Work />
@@ -41,6 +41,11 @@ export default function Home(): JSX.Element {
         {/* <Skills /> */}
         <Contact />
       </main>
+      <footer>
+        <div className="max-w-5xl mx-auto text-center pb-8 tablet:px-10">
+          <a>Built by Tim Ferrari</a>
+        </div>
+      </footer>
     </>
   );
 }

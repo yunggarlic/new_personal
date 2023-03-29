@@ -1,7 +1,7 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import statesmenPic from '../../public/statesmen.png';
-import tygkoPic from '../../public/tygko.png';
+import aetherPic from '../../public/aether.png';
 import githubPic from '../../public/github.png';
 
 const projectProps = [
@@ -19,7 +19,7 @@ const projectProps = [
     description:
       'Aether is a multiplayer music game built with React and Socket.io',
     link: 'aether.timferrari.com',
-    picSrc: tygkoPic,
+    picSrc: aetherPic,
     picAlt: 'A screenshot of the home page of the Aether App.',
     className: '',
   },
@@ -58,7 +58,7 @@ const FeaturedProject: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div
-      className={`flex relative h-72 py-4 mb-12 overflow-hidden ${className}`}
+      className={`flex relative h-72 py-4 mb-12 ${className}`}
     >
       <div className="w-3/5 z-10">
         <h2 className="text-xl mb-4">
@@ -73,7 +73,7 @@ const FeaturedProject: React.FC<ProjectProps> = ({
           <Image
             alt={picAlt}
             src={picSrc}
-            className="transition duration-300 ease-in-out"
+            className="max-h-[275px] w-full object-cover transition duration-300 ease-in-out"
           />
           <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
         </a>

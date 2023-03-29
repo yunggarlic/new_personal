@@ -131,11 +131,6 @@ a {
   align-items: center;
 }
 
-.job-list .job{
-  max-height: 300px;
-}
-
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

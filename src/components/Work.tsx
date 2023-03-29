@@ -60,7 +60,7 @@ const Work: React.FC = () => {
               </button>
             ))}
           </div>
-          <div className="job-list relative w-full">
+          <div className="job-list relative w-full tablet:max-h-[300px]">
             {jobs.map((job, i) => (
               <Job
                 {...job}
