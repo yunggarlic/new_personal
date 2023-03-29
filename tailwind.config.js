@@ -6,6 +6,10 @@ module.exports = {
       height:{
         "screen-minus-nav": "calc(100vh - var(--nav-height))",
       },
+      backgroundImage:{
+        'stars-tall': "url('/StarsTall.png')",
+      },
+
       screens:{
         tablet: "768px",
         desktop: "1024px",
