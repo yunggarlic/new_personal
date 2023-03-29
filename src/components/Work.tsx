@@ -46,7 +46,7 @@ const Work: React.FC = () => {
     >
       <div className="w-full my-auto">
         <h2 className="pb-8">Work Experience</h2>
-        <div className="work-inner flex flex-col tablet:flex-row h-full space-y-8">
+        <div className="work-inner flex flex-col tablet:flex-row h-full space-y-8 tablet:space-y-0">
           <div className="tab-list flex justify-between gap-4 tablet:flex-col tablet:mr-6">
             {jobs.map((job, i) => (
               <button
