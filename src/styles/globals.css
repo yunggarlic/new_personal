@@ -7,6 +7,8 @@
   --max-width: 1100px;
   --border-radius: 12px;
 
+  --nav-bg-color: #ffffff;
+  --nav-color: #000;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -28,8 +30,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 36, 15, 15;
+    --background-start-rgb: 34, 31, 32;
     --background-end-rgb: 0, 0, 0;
+    --nav-bg-color: #221f20;
+    --nav-color: #ffffff;
   }
 }
 
@@ -38,7 +42,6 @@
   padding: 0;
   margin: 0;
 }
-
 
 html,
 body {
@@ -58,64 +61,69 @@ body {
 
 nav {
   height: var(--nav-height);
+  background-color: var(--nav-bg-color);
+  color: var(--nav-color);
 }
 
-main{
-  margin-top: var(--nav-height); 
+.mobile-menu {
+  background-color: var(--nav-bg-color);
+  color: var(--nav-color);
 }
 
-html{
-  font-size:16px;
-  line-height:24px;
+main {
+  margin-top: var(--nav-height);
 }
 
-h1{
+html {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 {
   font-size: 3rem;
   line-height: 3rem;
 }
-h2{
+h2 {
   font-size: 2rem;
   line-height: 2rem;
 }
-h3{
+h3 {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-h4{
+h4 {
   font-size: 1.25rem;
   line-height: 1.5rem;
 }
-h5{
+h5 {
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
-p{
+p {
   font-size: 1rem;
   line-height: 1.25rem;
 }
 
-
-
-@media(min-width: 768px){
-  html{
+@media (min-width: 768px) {
+  html {
     font-size: 18px;
-    line-height:1.5rem;
+    line-height: 1.5rem;
   }
-  h1{
+  h1 {
     font-size: 4.5rem;
     line-height: 4.5rem;
   }
-  h2{
+  h2 {
     font-size: 3rem;
     line-height: 3rem;
   }
-  
-  h3{
+
+  h3 {
     font-size: 2rem;
     line-height: 2.5rem;
   }
-  
-  h4{
+
+  h4 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -126,7 +134,7 @@ a {
   text-decoration: none;
 }
 
-.skills-list > li{
+.skills-list > li {
   display: flex;
   align-items: center;
 }

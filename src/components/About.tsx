@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import picSrc from "../../public/me.jpg";
+import React from 'react';
+import Image from 'next/image';
+import picSrc from '../../public/me.jpg';
 
 const About: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const About: React.FC = () => {
       id="about"
     >
       <div className="space-y-4">
-        <h2 className="font-bold">About Me</h2>
+        <h2>About Me</h2>
         <p className="">
           My passion for computers is unmistakable - they've been a captivating
           presence in my life for as long as I can remember. Though I initially
@@ -17,13 +17,13 @@ const About: React.FC = () => {
           became an undeniable calling.
         </p>
         <p className="">
-          Today, I'm proud to be part of the talented team at{" "}
+          Today, I'm proud to be part of the talented team at{' '}
           <a href="criticalmass.com">Critical Mass</a>, where I have the
           opportunity to breathe new life into legacy websites by migrating them
           to cutting-edge frameworks. As a dynamic, forward-thinking
-          professional, I'm always eager to explore and embrace
-          the latest technological advancements to elevate my work and create
-          unparalleled digital experiences.
+          professional, I'm always eager to explore and embrace the latest
+          technological advancements to elevate my work and create unparalleled
+          digital experiences.
         </p>
         <p className="">
           Here are a few technologies I've been working with recently:

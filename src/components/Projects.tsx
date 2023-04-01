@@ -57,14 +57,12 @@ const FeaturedProject: React.FC<ProjectProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={`flex relative h-72 py-4 mb-12 ${className}`}
-    >
+    <div className={`flex relative h-72 py-4 mb-12 ${className}`}>
       <div className="w-3/5 z-10">
         <h2 className="text-xl mb-4">
           <a href={link}>{projectTitle}</a>
         </h2>
-        <div className="py-8 px-4 rounded shadow-lg bg-blue-900 text-slate-200 dark:text-black dark:bg-slate-400">
+        <div className="py-8 px-4 rounded shadow-lg bg-sky-200 dark:bg-emerald-800 dark:text-slate-200 text-black">
           <p>{description}</p>
         </div>
       </div>

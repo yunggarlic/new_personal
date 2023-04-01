@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -8,9 +8,12 @@ const Navbar: React.FC = () => {
   const handleScroll = () => {
     const currentScrollPosition = window.pageYOffset;
 
+    //If user scrolls down and the scroll position is greater than the navheight
+    //and the mobile menu is not open, hide the navbar
     if (
       prevScrollPosition < currentScrollPosition &&
-      currentScrollPosition > 100
+      currentScrollPosition > 100 &&
+      !mobileMenuOpen
     ) {
       setIsHidden(true);
     } else {
@@ -21,10 +24,10 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPosition]);
 
@@ -34,21 +37,18 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`flex items-center bg-black shadow-lg left-0 py-4 px-4 md:px-8 z-50 transform transition-transform duration-300 ${
-        isHidden ? "-translate-y-full fixed top-0 w-full" : "fixed top-0 w-full"
+      className={`flex items-center shadow-lg left-0 py-4 z-50 transform transition-transform duration-300 ${
+        isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
       }`}
     >
-      <div className="container mx-auto">
-        <div className="flex flex-row-reverse justify-between items-center">
-          <a
-            href="#"
-            className="text-white text-xl font-bold whitespace-nowrap"
-          >
+      <div className="max-w-5xl w-full mx-auto px-6 tablet:px-10 desktop:px-20">
+        <div className="w-full flex flex-row-reverse justify-between items-center">
+          <a href="#" className=" text-xl font-bold whitespace-nowrap">
             Tim Ferrari
           </a>
           <div className="md:hidden h-6">
             <button
-              className="text-white hover:text-gray-300 focus:outline-none"
+              className=" hover:text-gray-300 focus:outline-none"
               onClick={toggleMobileMenu}
             >
               <svg
@@ -66,31 +66,31 @@ const Navbar: React.FC = () => {
             </button>
           </div>
           <div
-            className={`${
-              mobileMenuOpen ? "block" : "hidden"
-            } absolute top-full left-0 w-full bg-gray-800 md:static md:bg-transparent md:flex space-x-4 mt-2 md:mt-0`}
+            className={`mobile-menu ${
+              mobileMenuOpen ? 'block' : 'hidden'
+            } absolute top-full left-0 w-full md:static md:bg-transparent md:flex space-y-4 tablet:space-x-4 tablet:space-y-0`}
           >
             <a
               href="#hero"
-              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
             >
               Home
             </a>
             <a
               href="#projects"
-              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
             >
               Projects
             </a>
             <a
               href="#skills"
-              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="block py-2 pr-4 text-white hover:text-gray-300 md:inline-block"
+              className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
             >
               Contact
             </a>

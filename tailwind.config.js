@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      height:{
-        "screen-minus-nav": "calc(100vh - var(--nav-height))",
+      height: {
+        'screen-minus-nav': 'calc(100vh - var(--nav-height))',
       },
-      backgroundImage:{
+      backgroundImage: {
         'stars-tall': "url('/StarsTall.png')",
       },
 
-      screens:{
-        tablet: "768px",
-        desktop: "1024px",
-      }
+      screens: {
+        tablet: '768px',
+        desktop: '1280px',
+      },
     },
   },
   plugins: [],
-}
+};

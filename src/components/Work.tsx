@@ -40,10 +40,7 @@ const Work: React.FC = () => {
   ];
 
   return (
-    <section
-      className="flex items-center h-screen"
-      id="work"
-    >
+    <section className="flex items-center h-screen" id="work">
       <div className="w-full my-auto">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex flex-col tablet:flex-row h-full space-y-8 tablet:space-y-0">
@@ -53,7 +50,9 @@ const Work: React.FC = () => {
                 key={i}
                 onClick={() => setCurrentJob(i)}
                 className={`${
-                  currentJob === i ? 'active bg-blue-500/10 dark:bg-blue-500/20' : ''
+                  currentJob === i
+                    ? 'active bg-blue-500/10 dark:bg-blue-500/20'
+                    : ''
                 } w-full rounded tablet:whitespace-nowrap text-left p-4 tablet:px-6 text-xs tablet:h-12 transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20`}
               >
                 {job.jobTitle}
@@ -99,7 +98,8 @@ const Job: React.FC<JobProps> = ({
   return (
     <div className={`job ${className}`}>
       <h3 className="leading-8">
-        <span>{jobTitle} </span><a className="block text-lg"> {company}</a>
+        <span>{jobTitle} </span>
+        <a className="block text-lg"> {company}</a>
       </h3>
       <p className="text-sm pb-4">
         {startDate} - {endDate}
