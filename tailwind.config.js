@@ -14,6 +14,7 @@ module.exports = {
         tablet: '768px',
         desktop: '1280px',
       },
+      transitionProperty: {},
     },
   },
   plugins: [],

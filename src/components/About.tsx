@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import picSrc from '../../public/me.jpg';
 
 const About: React.FC = () => {
+  const aboutRef = useRef<HTMLElement>(null);
+  const [intersected, setIntersected] = useState<Boolean>(false);
+
+  //function for intersection observer
+
+  useEffect(() => {
+    let about = aboutRef.current;
+    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIntersected(true);
+          observer.unobserve(about!);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    });
+
+    observer.observe(about!);
+  }, []);
+
   return (
     <section
-      className="flex flex-col tablet:flex-row items-center space-y-8"
+      className={`flex flex-col tablet:flex-row items-center space-y-8 transition-all duration-1000 translate-y-10 ${
+        intersected ? 'opacity-100 animate-up' : 'opacity-0'
+      }`}
       id="about"
+      ref={aboutRef}
     >
-      <div className="space-y-4">
+      <div className={`space-y-4`}>
         <h2>About Me</h2>
         <p className="">
           My passion for computers is unmistakable - they've been a captivating
@@ -37,7 +65,11 @@ const About: React.FC = () => {
           <li className="">Adobe Experience Manager</li>
         </ul>
       </div>
-      <div className="img-side">
+      <div
+        className={`img-side translate-y-10 transition-transform duration-700 ${
+          intersected ? 'animate-up' : ''
+        }`}
+      >
         <Image
           src={picSrc}
           className="mx-auto rounded-full shadow-md"
