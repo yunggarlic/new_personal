@@ -18,7 +18,6 @@ const About: React.FC = () => {
         }
       });
     };
-
     const observer = new IntersectionObserver(intersectionCallback, {
       root: null,
       rootMargin: '0px',
@@ -39,10 +38,10 @@ const About: React.FC = () => {
       <div className={`space-y-4`}>
         <h2>About Me</h2>
         <p className="">
-          My passion for computers is unmistakable - they've been a captivating
-          presence in my life for as long as I can remember. Though I initially
-          hesitated to transform this fascination into a career, it eventually
-          became an undeniable calling.
+          I have always had a strong interest in computers, which have played a
+          significant role in my life for as long as I can remember. Though I
+          initially hesitated to transform this fascination into a career, it
+          eventually became an undeniable calling.
         </p>
         <p className="">
           Today, I'm proud to be part of the talented team at{' '}

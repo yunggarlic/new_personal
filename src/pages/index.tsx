@@ -23,7 +23,7 @@ const projectProps = [
   {
     projectTitle: 'The Statesmen Podcast App',
     description:
-      'A podcast app for the Statesmen Podcast. Built with React, and Material UI',
+      "A podcast app for the Statesmen Podcast that dynamically reads the show's RSS feed for the most updated episode. Built with React, MaterialUI and Redis.",
     link: 'statesmenpodcast.com',
     picSrc: statesmenPic,
     picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
@@ -31,7 +31,7 @@ const projectProps = [
   {
     projectTitle: 'Aether',
     description:
-      'Aether is a multiplayer music game built with React and Socket.io',
+      'Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.',
     link: 'aether.timferrari.com',
     picSrc: aetherPic,
     picAlt: 'A screenshot of the home page of the Aether App.',
