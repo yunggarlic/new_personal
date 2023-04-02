@@ -82,8 +82,8 @@ const FeaturedProject: React.FC<ProjectProps> = ({
       ref={projectRef}
       className={`flex relative h-72 py-4 mb-12 ${className}`}
     >
-      <div className="w-3/5 z-10">
-        <h2 className="text-xl mb-4">
+      <div className="w-4/5 tablet:w-3/5 z-10">
+        <h2 className="w-3/4 tablet:w-full text-xl mb-4">
           <a href={link}>{projectTitle}</a>
         </h2>
         <div className="py-8 px-4 rounded shadow-lg bg-sky-200 dark:bg-emerald-800 dark:text-slate-200 text-black">
@@ -95,7 +95,7 @@ const FeaturedProject: React.FC<ProjectProps> = ({
           <Image
             alt={picAlt}
             src={picSrc}
-            className="max-h-[275px] w-full object-cover transition duration-300 ease-in-out"
+            className="max-h-[275px] min-h-[100px] w-full object-cover transition duration-300 ease-in-out"
           />
           <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
         </a>
