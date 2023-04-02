@@ -1,38 +1,33 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import statesmenPic from '../../public/statesmen.png';
 import aetherPic from '../../public/aether.png';
 import githubPic from '../../public/github.png';
+interface ProjectsProps {
+  projectsProps: {
+    projectTitle: string;
+    description: string;
+    link: string;
+    picSrc: StaticImageData;
+    picAlt: string;
+  }[];
+}
 
-const projectProps = [
-  {
-    projectTitle: 'The Statesmen Podcast App',
-    description:
-      'A podcast app for the Statesmen Podcast. Built with React, and Material UI',
-    link: 'statesmenpodcast.com',
-    picSrc: statesmenPic,
-    picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
-    className: '',
-  },
-  {
-    projectTitle: 'Aether',
-    description:
-      'Aether is a multiplayer music game built with React and Socket.io',
-    link: 'aether.timferrari.com',
-    picSrc: aetherPic,
-    picAlt: 'A screenshot of the home page of the Aether App.',
-    className: '',
-  },
-];
-
-const Projects: React.FC = () => {
+const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
   return (
     <section className="space-y-4" id="projects">
       <h2 className="">Projects</h2>
       <p className="">Check out some of my work</p>
       <div className="flex flex-col">
-        {projectProps.map((project, i) => (
-          <FeaturedProject key={i} {...project} />
+        {projectsProps.map((project, i) => (
+          <FeaturedProject
+            {...projectsProps}
+            className={`opacity-0 transition-all duration-500 ${
+              i % 2 == 0 ? 'translate-x-[50%]' : 'translate-x-[-50%]'
+            }`}
+            key={i}
+            {...project}
+          />
         ))}
       </div>
     </section>
@@ -56,8 +51,37 @@ const FeaturedProject: React.FC<ProjectProps> = ({
   picAlt,
   className,
 }) => {
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let project = projectRef.current;
+    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          project!.classList.remove(
+            'opacity-0',
+            'translate-x-[50%]',
+            'translate-x-[-50%]'
+          );
+          project!.classList.add('opacity-100', 'translate-x-0');
+          observer.unobserve(project!);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.4,
+    });
+
+    observer.observe(project!);
+  }, []);
+
   return (
-    <div className={`flex relative h-72 py-4 mb-12 ${className}`}>
+    <div
+      ref={projectRef}
+      className={`flex relative h-72 py-4 mb-12 ${className}`}
+    >
       <div className="w-3/5 z-10">
         <h2 className="text-xl mb-4">
           <a href={link}>{projectTitle}</a>

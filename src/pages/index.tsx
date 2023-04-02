@@ -1,9 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
+import statesmenPic from '../../public/statesmen.png';
+import aetherPic from '../../public/aether.png';
 
-import { useEffect, useState, useRef } from "react";
-import { Roboto_Mono } from "next/font/google";
+import { useEffect, useState, useRef } from 'react';
+import { Roboto_Mono } from 'next/font/google';
 import {
   Navbar,
   Hero,
@@ -12,10 +14,29 @@ import {
   About,
   Work,
   Contact,
-} from "../components";
+} from '../components';
 
 // If loading a variable font, you don't need to specify the font weight
-const roboto = Roboto_Mono({ subsets: ["latin"] });
+const roboto = Roboto_Mono({ subsets: ['latin'] });
+
+const projectProps = [
+  {
+    projectTitle: 'The Statesmen Podcast App',
+    description:
+      'A podcast app for the Statesmen Podcast. Built with React, and Material UI',
+    link: 'statesmenpodcast.com',
+    picSrc: statesmenPic,
+    picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
+  },
+  {
+    projectTitle: 'Aether',
+    description:
+      'Aether is a multiplayer music game built with React and Socket.io',
+    link: 'aether.timferrari.com',
+    picSrc: aetherPic,
+    picAlt: 'A screenshot of the home page of the Aether App.',
+  },
+];
 
 export default function Home(): JSX.Element {
   return (
@@ -33,11 +54,13 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className={`max-w-5xl bg-stars-tall bg-right-top mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}>
+      <main
+        className={`max-w-5xl bg-stars-tall bg-right-top mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}
+      >
         <Hero />
         <About />
         <Work />
-        <Projects />
+        <Projects projectsProps={projectProps} />
         {/* <Skills /> */}
         <Contact />
       </main>
