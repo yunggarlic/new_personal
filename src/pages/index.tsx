@@ -24,7 +24,7 @@ const projectProps = [
     projectTitle: 'The Statesmen Podcast App',
     description:
       "A podcast app for the Statesmen Podcast that dynamically reads the show's RSS feed for the most updated episode. Built with React, MaterialUI and Redis.",
-    link: 'statesmenpodcast.com',
+    link: 'https://statesmenpodcast.com',
     picSrc: statesmenPic,
     picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
   },
@@ -32,7 +32,7 @@ const projectProps = [
     projectTitle: 'Aether',
     description:
       'Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.',
-    link: 'aether.timferrari.com',
+    link: 'https://aether.timferrari.com',
     picSrc: aetherPic,
     picAlt: 'A screenshot of the home page of the Aether App.',
   },
@@ -53,7 +53,7 @@ export default function Home(): JSX.Element {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar className={`${roboto.className}`} />
       <main
         className={`max-w-5xl bg-stars-tall bg-right-top mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}
       >

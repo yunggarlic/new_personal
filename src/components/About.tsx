@@ -38,22 +38,19 @@ const About: React.FC = () => {
       <div className={`space-y-4`}>
         <h2>About Me</h2>
         <p className="">
-          I have always had a strong interest in computers, which have played a
-          significant role in my life for as long as I can remember. Though I
-          initially hesitated to transform this fascination into a career, it
-          eventually became an undeniable calling.
+          {
+            'I have always had a strong interest in computers, which have played a significant role in my life for as long as I can remember. Though I initially hesitated to transform this fascination into a career, it eventually became an undeniable calling.'
+          }
         </p>
         <p className="">
-          Today, I'm proud to be part of the talented team at{' '}
-          <a href="criticalmass.com">Critical Mass</a>, where I have the
-          opportunity to breathe new life into legacy websites by migrating them
-          to cutting-edge frameworks. As a dynamic, forward-thinking
-          professional, I'm always eager to explore and embrace the latest
-          technological advancements to elevate my work and create unparalleled
-          digital experiences.
+          {"Today, I'm proud to be part of the talented team at "}
+          <a href="criticalmass.com">Critical Mass</a>{' '}
+          {
+            ", where I have the opportunity to breathe new life into legacy websites by migrating them to cutting-edge frameworks. As a dynamic, forward-thinking professional, I'm always eager to explore and embrace the latest technological advancements to elevate my work and create unparalleled digital experiences."
+          }
         </p>
         <p className="">
-          Here are a few technologies I've been working with recently:
+          {"Here are a few technologies I've been working with recently:"}
         </p>
         <ul className="skills-list grid grid-cols-2 auto-rows-fr gap-4">
           <li className="">JavaScript (ES5+6)</li>

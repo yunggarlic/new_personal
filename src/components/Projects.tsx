@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import statesmenPic from '../../public/statesmen.png';
 import aetherPic from '../../public/aether.png';
 import githubPic from '../../public/github.png';
+import Link from 'next/link';
 interface ProjectsProps {
   projectsProps: {
     projectTitle: string;
@@ -23,7 +24,7 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
           <FeaturedProject
             {...projectsProps}
             className={`opacity-0 transition-all duration-500 ${
-              i % 2 == 0 ? 'translate-x-[50%]' : 'translate-x-[-50%]'
+              i % 2 == 0 ? 'translate-x-[25%]' : 'translate-x-[-25%]'
             }`}
             key={i}
             {...project}
@@ -60,8 +61,8 @@ const FeaturedProject: React.FC<ProjectProps> = ({
         if (entry.isIntersecting) {
           project!.classList.remove(
             'opacity-0',
-            'translate-x-[50%]',
-            'translate-x-[-50%]'
+            'translate-x-[25%]',
+            'translate-x-[-25%]'
           );
           project!.classList.add('opacity-100', 'translate-x-0');
           observer.unobserve(project!);
@@ -91,14 +92,14 @@ const FeaturedProject: React.FC<ProjectProps> = ({
         </div>
       </div>
       <div className="w-1/2 absolute left-1/2 z-0 rounded overflow-hidden">
-        <a href={link} className="relative group">
+        <Link href={link} className="relative group">
           <Image
             alt={picAlt}
             src={picSrc}
             className="max-h-[275px] min-h-[100px] w-full object-cover transition duration-300 ease-in-out"
           />
           <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
-        </a>
+        </Link>
       </div>
     </div>
   );

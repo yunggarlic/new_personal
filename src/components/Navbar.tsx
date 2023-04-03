@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = ({ className }) => {
   const [isHidden, setIsHidden] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`flex items-center shadow-lg left-0 py-4 z-50 transform transition-transform duration-300 ${
+      className={`flex items-center shadow-lg left-0 py-4 z-50 transform transition-transform duration-300 ${className} ${
         isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
       }`}
     >

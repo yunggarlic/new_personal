@@ -58,7 +58,7 @@ const Work: React.FC = () => {
       endDate: 'Present',
       description: [
         'Develop and implement modern, performant, and maintainable code for a wide range of client and internal projects, adhering to best practices and industry standards',
-        'Demonstrate proficiency in multiple languages, platforms, frameworks, and content management systems, such as JavaScript, TypeScript, React, Adobe Experience Manager, and Salesforce',
+        'Demonstrate proficiency in multiple languages, platforms, frameworks, and content management systems, such as JavaScript, TypeScript, React, Tailwind, Adobe Experience Manager, and Salesforce',
         'Liaise with multi-disciplinary teams of engineers, designers, producers, and clients, offering technical guidance and ensuring the delivery of top-quality products that exceed expectations',
       ],
     },
@@ -68,9 +68,9 @@ const Work: React.FC = () => {
       startDate: 'September 2021',
       endDate: 'March 2022',
       description: [
-        'Gained valuable industry experience by shadowing seasoned engineers and executing a variety of small-scale independent projects, demonstrating adaptability and eagerness to learn',
-        'Introduced and implemented a range of development tools and automation scripts to streamline workflows and bolster the efficiency of the development team',
         'Designed, developed, and maintained code for in-house and client websites, utilizing technologies such as HTML, CSS, Less, JavaScript, and jQuery while adhering to best practices',
+        'Introduced and implemented a range of development tools and automation scripts to streamline workflows and bolster the efficiency of the development team',
+        'Gained valuable industry experience by shadowing and pair programming with seasoned engineers and executing a variety of small-scale independent projects, demonstrating adaptability and eagerness to learn',
       ],
     },
     {
