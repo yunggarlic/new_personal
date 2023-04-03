@@ -6,6 +6,20 @@ const About: React.FC = () => {
   const aboutRef = useRef<HTMLElement>(null);
   const [intersected, setIntersected] = useState<Boolean>(false);
 
+  const skills = [
+    'Javascript',
+    'TypeScript',
+    'React',
+    'NextJS',
+    'Express',
+    'NodeJS',
+    'Python',
+    'Nginx',
+    'Linux',
+    'AEM (Adobe)',
+    'Git',
+  ];
+
   //function for intersection observer
 
   useEffect(() => {
@@ -44,7 +58,9 @@ const About: React.FC = () => {
         </p>
         <p className="">
           {"Today, I'm proud to be part of the talented team at "}
-          <a href="criticalmass.com">Critical Mass</a>{' '}
+          <a className="hover:border-b" href="criticalmass.com">
+            Critical Mass
+          </a>
           {
             ", where I have the opportunity to breathe new life into legacy websites by migrating them to cutting-edge frameworks. As a dynamic, forward-thinking professional, I'm always eager to explore and embrace the latest technological advancements to elevate my work and create unparalleled digital experiences."
           }
@@ -52,13 +68,10 @@ const About: React.FC = () => {
         <p className="">
           {"Here are a few technologies I've been working with recently:"}
         </p>
-        <ul className="skills-list grid grid-cols-2 auto-rows-fr gap-4">
-          <li className="">JavaScript (ES5+6)</li>
-          <li className="">React + Next</li>
-          <li className="">Node.js</li>
-          <li className="">Python</li>
-          <li className="">TypeScript</li>
-          <li className="">Adobe Experience Manager</li>
+        <ul className="skills-list grid grid-cols-3 auto-rows-fr gap-4">
+          {skills.map((skill, index) => {
+            return <li key={index}>{skill}</li>;
+          })}
         </ul>
       </div>
       <div
