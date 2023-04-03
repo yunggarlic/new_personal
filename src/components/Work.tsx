@@ -104,7 +104,7 @@ const Work: React.FC = () => {
                   currentJob === i
                     ? 'active bg-blue-500/10 dark:bg-blue-500/20'
                     : ''
-                } w-full rounded tablet:whitespace-nowrap text-left p-4 tablet:px-6 text-xs tablet:h-12 transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20`}
+                } work-tab`}
               >
                 {job.jobTitle}
               </button>
