@@ -129,7 +129,7 @@ a {
   transform: translateX(0);
 }
 .work-tab {
-  @apply w-full rounded p-4 text-left text-xs transition-all hover:bg-blue-500/10 dark:hover:bg-blue-500/20 tablet:h-12 tablet:whitespace-nowrap tablet:px-6;
+  @apply w-full rounded p-4 text-left text-xs transition-all hover:bg-blue-500/10 dark:hover:bg-deep-blue tablet:h-12 tablet:whitespace-nowrap tablet:px-6;
 }
 
 @media (prefers-color-scheme: dark) {

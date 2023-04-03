@@ -102,7 +102,7 @@ const Work: React.FC = () => {
                 onClick={() => setCurrentJob(i)}
                 className={`${
                   currentJob === i
-                    ? 'active bg-blue-500/10 dark:bg-blue-500/20'
+                    ? 'active bg-blue-500/10 dark:bg-deep-blue'
                     : ''
                 } work-tab`}
               >

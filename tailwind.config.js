@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         'stars-tall': "url('/StarsTall.png')",
       },
+      colors: {
+        'deep-blue': '#1A273E',
+      },
 
       screens: {
         tablet: '768px',
