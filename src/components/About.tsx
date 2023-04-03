@@ -43,8 +43,8 @@ const About: React.FC = () => {
 
   return (
     <section
-      className={`flex flex-col tablet:flex-row items-center space-y-8 transition-all duration-1000 translate-y-10 ${
-        intersected ? 'opacity-100 animate-up' : 'opacity-0'
+      className={`flex translate-y-10 flex-col items-center space-y-8 transition-all duration-1000 tablet:flex-row ${
+        intersected ? 'animate-up opacity-100' : 'opacity-0'
       }`}
       id="about"
       ref={aboutRef}
@@ -68,7 +68,7 @@ const About: React.FC = () => {
         <p className="">
           {"Here are a few technologies I've been working with recently:"}
         </p>
-        <ul className="skills-list grid grid-cols-3 auto-rows-fr gap-4">
+        <ul className="skills-list grid auto-rows-fr grid-cols-3 gap-4">
           {skills.map((skill, index) => {
             return <li key={index}>{skill}</li>;
           })}

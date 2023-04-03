@@ -91,11 +91,11 @@ const Work: React.FC = () => {
   ];
 
   return (
-    <section className="flex items-center h-screen" id="work">
-      <div className="w-full h-full tablet:h-[unset] my-auto">
+    <section className="flex h-screen items-center" id="work">
+      <div className="my-auto h-full w-full tablet:h-[unset]">
         <h2 className="pb-8">Work Experience</h2>
-        <div className="work-inner flex flex-col tablet:flex-row h-full space-y-4 tablet:space-y-0">
-          <div className="tab-list flex justify-between tablet:justify-start gap-4 tablet:flex-col tablet:mr-6">
+        <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
+          <div className="tab-list flex justify-between gap-4 tablet:mr-6 tablet:flex-col tablet:justify-start">
             {jobs.map((job, i) => (
               <button
                 key={i}
@@ -116,8 +116,8 @@ const Work: React.FC = () => {
                 {...job}
                 className={`transition-opacity duration-500 ${
                   currentJob === i
-                    ? 'visible opacity-100 h-full'
-                    : 'invisible opacity-0 h-0'
+                    ? 'visible h-full opacity-100'
+                    : 'invisible h-0 opacity-0'
                 } `}
                 key={i}
               />
@@ -157,7 +157,7 @@ const Job: React.FC<JobProps> = ({
           {company}
         </Link>
       </h3>
-      <p className="text-sm pb-4">
+      <p className="pb-4 text-sm">
         {startDate} - {endDate}
       </p>
       <ul>

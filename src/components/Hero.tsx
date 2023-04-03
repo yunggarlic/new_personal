@@ -4,8 +4,8 @@ import Link from 'next/link';
 const Hero: React.FC = () => {
   return (
     <section className="hero h-screen-minus-nav">
-      <div className="h-full text-side flex flex-col justify-center">
-        <h1 className="text-xs mb-4">Hi, my name is</h1>
+      <div className="text-side flex h-full flex-col justify-center">
+        <h1 className="mb-4 text-xs">Hi, my name is</h1>
         <h2 className="">Tim Ferrari.</h2>
         <h3 className="">I help cobble together the web.</h3>
         <p className="pt-8 tablet:w-3/4">

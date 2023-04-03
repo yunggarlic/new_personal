@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 const Skills: React.FC = () => {
   return (
-    <section className="h-screen mb-8" id="skills">
+    <section className="mb-8 h-screen" id="skills">
       <h2 className="text-3xl font-bold">Skills</h2>
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <h3 className="text-2xl mb-2">Frontend</h3>
-          <ul className="list-disc list-inside">
+          <h3 className="mb-2 text-2xl">Frontend</h3>
+          <ul className="list-inside list-disc">
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript</li>
@@ -19,8 +19,8 @@ const Skills: React.FC = () => {
           </ul>
         </div>
         <div>
-          <h3 className="text-2xl mb-2">Backend</h3>
-          <ul className="list-disc list-inside">
+          <h3 className="mb-2 text-2xl">Backend</h3>
+          <ul className="list-inside list-disc">
             <li>Node.js</li>
             <li>Express</li>
             <li>Python</li>
@@ -32,8 +32,8 @@ const Skills: React.FC = () => {
           </ul>
         </div>
         <div>
-          <h3 className="text-2xl mb-2">DevOps & Cloud</h3>
-          <ul className="list-disc list-inside">
+          <h3 className="mb-2 text-2xl">DevOps & Cloud</h3>
+          <ul className="list-inside list-disc">
             <li>Docker</li>
             <li>Kubernetes</li>
             <li>Git</li>

@@ -41,16 +41,16 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
 
   return (
     <nav
-      className={`flex items-center shadow-lg left-0 z-50 transform transition-transform duration-300 ${className} ${
-        isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
+      className={`left-0 z-50 flex transform items-center shadow-lg transition-transform duration-300 ${className} ${
+        isHidden ? 'fixed top-0 w-full -translate-y-full' : 'fixed top-0 w-full'
       }`}
     >
-      <div className="max-w-5xl w-full mx-auto px-6 tablet:px-10">
-        <div className="w-full flex flex-row-reverse justify-between items-center">
-          <a href="#" className=" text-xl font-bold whitespace-nowrap">
+      <div className="mx-auto w-full max-w-5xl px-6 tablet:px-10">
+        <div className="flex w-full flex-row-reverse items-center justify-between">
+          <a href="#" className=" whitespace-nowrap text-xl font-bold">
             Tim Ferrari
           </a>
-          <div className="md:hidden h-6">
+          <div className="h-6 md:hidden">
             <button
               className=" hover:text-gray-300 focus:outline-none"
               onClick={toggleMobileMenu}
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   fillRule="evenodd"
@@ -72,7 +72,7 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
           <div
             className={`mobile-menu ${
               mobileMenuOpen ? 'block' : 'hidden'
-            } absolute top-full left-0 w-full md:static md:bg-transparent md:flex space-y-4 tablet:space-x-4 tablet:space-y-0`}
+            } absolute top-full left-0 w-full space-y-4 md:static md:flex md:bg-transparent tablet:space-x-4 tablet:space-y-0`}
           >
             <a
               href="#hero"
