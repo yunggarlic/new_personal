@@ -9,31 +9,31 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleScroll = () => {
-    const currentScrollPosition = window.pageYOffset;
-
-    //If user scrolls down and the scroll position is greater than the navheight
-    //and the mobile menu is not open, hide the navbar
-    if (
-      prevScrollPosition < currentScrollPosition &&
-      currentScrollPosition > 100 &&
-      !mobileMenuOpen
-    ) {
-      setIsHidden(true);
-    } else {
-      setIsHidden(false);
-    }
-
-    setPrevScrollPosition(currentScrollPosition);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.pageYOffset;
+
+      //If user scrolls down and the scroll position is greater than the navheight
+      //and the mobile menu is not open, hide the navbar
+      if (
+        prevScrollPosition < currentScrollPosition &&
+        currentScrollPosition > 100 &&
+        !mobileMenuOpen
+      ) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+
+      setPrevScrollPosition(currentScrollPosition);
+    };
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPosition]);
+  }, [prevScrollPosition, mobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
