@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar: React.FC = ({ className }) => {
+interface NavProps {
+  className?: string;
+}
+
+const Navbar: React.FC<NavProps> = ({ className }) => {
   const [isHidden, setIsHidden] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
