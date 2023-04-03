@@ -87,7 +87,7 @@ const FeaturedProject: React.FC<ProjectProps> = ({
         <h2 className="w-3/4 tablet:w-full text-xl mb-4">
           <a href={link}>{projectTitle}</a>
         </h2>
-        <div className="py-8 px-4 rounded shadow-lg bg-sky-200 dark:bg-emerald-800 dark:text-slate-200 text-black">
+        <div className="py-8 px-4 rounded shadow-lg bg-sky-200 dark:bg-[#1A273E] dark:text-slate-200 text-black">
           <p>{description}</p>
         </div>
       </div>
