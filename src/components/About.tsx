@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import picSrc from '../../public/me.jpg';
+import Link from 'next/link';
 
 const About: React.FC = () => {
   const aboutRef = useRef<HTMLElement>(null);
@@ -58,9 +59,9 @@ const About: React.FC = () => {
         </p>
         <p className="">
           {"Today, I'm proud to be part of the talented team at "}
-          <a className="hover:border-b" href="criticalmass.com">
+          <Link className="hover:border-b" href="criticalmass.com">
             Critical Mass
-          </a>
+          </Link>
           {
             ", where I have the opportunity to breathe new life into legacy websites by migrating them to cutting-edge frameworks. As a dynamic, forward-thinking professional, I'm always eager to explore and embrace the latest technological advancements to elevate my work and create unparalleled digital experiences."
           }
