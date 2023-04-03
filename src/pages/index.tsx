@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
-import statesmenPic from '../../public/statesmen.png';
-import aetherPic from '../../public/aether.png';
+import statesmenPic from "../../public/statesmen.png";
+import aetherPic from "../../public/aether.png";
 
-import { Roboto_Mono } from 'next/font/google';
+import { Roboto_Mono } from "next/font/google";
 import {
   Navbar,
   Hero,
@@ -13,27 +13,27 @@ import {
   About,
   Work,
   Contact,
-} from '../components';
+} from "../components";
 
 // If loading a variable font, you don't need to specify the font weight
-const roboto = Roboto_Mono({ subsets: ['latin'] });
+const roboto = Roboto_Mono({ subsets: ["latin"] });
 
 const projectProps = [
   {
-    projectTitle: 'The Statesmen Podcast App',
+    projectTitle: "The Statesmen Podcast App",
     description:
       "A podcast app for the Statesmen Podcast that dynamically reads the show's RSS feed for the most updated episode. Built with React, MaterialUI and Redis.",
-    link: 'https://statesmenpodcast.com',
+    link: "https://statesmenpodcast.com",
     picSrc: statesmenPic,
-    picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
+    picAlt: "A screenshot of the home page of the Statesmen Podcast App.",
   },
   {
-    projectTitle: 'Aether',
+    projectTitle: "Aether",
     description:
-      'Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.',
-    link: 'https://aether.timferrari.com',
+      "Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.",
+    link: "https://aether.timferrari.com",
     picSrc: aetherPic,
-    picAlt: 'A screenshot of the home page of the Aether App.',
+    picAlt: "A screenshot of the home page of the Aether App.",
   },
 ];
 
@@ -52,10 +52,10 @@ export default function Home(): JSX.Element {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar className={`${roboto.className}`} />
       <main
         className={`max-w-5xl bg-stars-tall bg-right-top mx-auto px-6 tablet:px-10 space-y-10 ${roboto.className}`}
       >
+        <Navbar />
         <Hero />
         <About />
         <Work />

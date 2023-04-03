@@ -41,11 +41,11 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
 
   return (
     <nav
-      className={`flex items-center shadow-lg left-0 py-4 z-50 transform transition-transform duration-300 ${className} ${
+      className={`flex items-center shadow-lg left-0 z-50 transform transition-transform duration-300 ${className} ${
         isHidden ? '-translate-y-full fixed top-0 w-full' : 'fixed top-0 w-full'
       }`}
     >
-      <div className="max-w-5xl w-full mx-auto px-6 tablet:px-10 desktop:px-20">
+      <div className="max-w-5xl w-full mx-auto px-6 tablet:px-10">
         <div className="w-full flex flex-row-reverse justify-between items-center">
           <a href="#" className=" text-xl font-bold whitespace-nowrap">
             Tim Ferrari
