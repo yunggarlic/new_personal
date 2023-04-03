@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const Work: React.FC = () => {
   const [currentJob, setCurrentJob] = useState(0);
@@ -54,6 +55,7 @@ const Work: React.FC = () => {
     {
       jobTitle: 'Software Engineer',
       company: 'Critical Mass',
+      companyLink: 'https://www.criticalmass.com/',
       startDate: 'March 2022',
       endDate: 'Present',
       description: [
@@ -65,6 +67,7 @@ const Work: React.FC = () => {
     {
       jobTitle: 'Software Engineer Intern',
       company: 'Critical Mass',
+      companyLink: 'https://www.criticalmass.com/',
       startDate: 'September 2021',
       endDate: 'March 2022',
       description: [
@@ -76,6 +79,7 @@ const Work: React.FC = () => {
     {
       jobTitle: 'Film Production',
       company: 'Freelance',
+      companyLink: '/',
       startDate: 'May 2016',
       endDate: 'March 2020',
       description: [
@@ -128,6 +132,7 @@ const Work: React.FC = () => {
 interface JobProps {
   jobTitle: string;
   company: string;
+  companyLink: string;
   startDate: string;
   endDate: string;
   description: string[];
@@ -137,6 +142,7 @@ interface JobProps {
 const Job: React.FC<JobProps> = ({
   jobTitle,
   company,
+  companyLink,
   startDate,
   endDate,
   description,
@@ -146,7 +152,10 @@ const Job: React.FC<JobProps> = ({
     <div className={`job ${className}`}>
       <h3 className="leading-8">
         <span>{jobTitle} </span>
-        <a className="block text-lg"> {company}</a>
+        <Link href={companyLink} className="block text-lg">
+          {' '}
+          {company}
+        </Link>
       </h3>
       <p className="text-sm pb-4">
         {startDate} - {endDate}

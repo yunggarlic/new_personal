@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
+import Link from 'next/link';
+
 import statesmenPic from '../../public/statesmen.png';
 import aetherPic from '../../public/aether.png';
 
-import { useEffect, useState, useRef } from 'react';
 import { Roboto_Mono } from 'next/font/google';
 import {
   Navbar,
@@ -63,12 +62,24 @@ export default function Home(): JSX.Element {
         <Projects projectsProps={projectProps} />
         {/* <Skills /> */}
         <Contact />
+        <footer>
+          <div className="max-w-5xl mx-auto text-center pb-8 tablet:px-10">
+            <div>
+              <Link className="hover:border-b" href="/">
+                Built by Tim Ferrari
+              </Link>
+            </div>
+            <div>
+              <Link
+                className="hover:border-b"
+                href="https://brittanychiang.com/"
+              >
+                Inspired by Brittany Chiang
+              </Link>
+            </div>
+          </div>
+        </footer>
       </main>
-      <footer>
-        <div className="max-w-5xl mx-auto text-center pb-8 tablet:px-10">
-          <a>Built by Tim Ferrari</a>
-        </div>
-      </footer>
     </>
   );
 }
