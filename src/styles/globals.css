@@ -7,8 +7,8 @@
   --max-width: 1100px;
   --border-radius: 12px;
 
-  --nav-bg-color: #ffffff;
-  --nav-color: #000;
+  --nav-bg-color: 214, 219, 220;
+  --nav-color: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
 }
 
@@ -17,8 +17,8 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 34, 31, 32;
     --background-end-rgb: 0, 0, 0;
-    --nav-bg-color: #221f20;
-    --nav-color: #ffffff;
+    --nav-bg-color: 34, 31, 32;
+    --nav-color: 255, 255, 255;
   }
 }
 
@@ -41,13 +41,14 @@ body {
 
 nav {
   height: var(--nav-height);
-  background-color: var(--nav-bg-color);
-  color: var(--nav-color);
+  background-color: rgb(var(--nav-bg-color));
+  color: rgb(var(--nav-color));
 }
 
 .mobile-menu {
-  background-color: var(--nav-bg-color);
-  color: var(--nav-color);
+  background-color: rgb(var(--nav-bg-color));
+  color: rgb(var(--nav-color));
+  @apply px-6;
 }
 
 main {
