@@ -50,7 +50,7 @@ const About: React.FC = () => {
       id="about"
       ref={aboutRef}
     >
-      <div className={`space-y-4`}>
+      <div className={`space-y-4 bg-fade`}>
         <h2>About Me</h2>
         <p className="">
           {
@@ -76,7 +76,7 @@ const About: React.FC = () => {
         </ul>
       </div>
       <div
-        className={`img-side translate-y-10 transition-transform duration-700 ${
+        className={`img-side translate-y-10 transition-transform duration-700 min-w-[33%] max-w-[360px] ${
           intersected ? 'animate-up' : ''
         }`}
       >
