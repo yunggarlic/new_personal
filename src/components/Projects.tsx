@@ -1,18 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import statesmenPic from '../../public/statesmen.png';
-import aetherPic from '../../public/aether.png';
-import githubPic from '../../public/github.png';
+import Image from 'next/image';
 import Link from 'next/link';
-interface ProjectsProps {
-  projectsProps: {
-    projectTitle: string;
-    description: string;
-    link: string;
-    picSrc: StaticImageData;
-    picAlt: string;
-  }[];
-}
+import {ProjectProp, ProjectsProps} from '../lib/types'
 
 const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
   return (
@@ -22,12 +11,11 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
       <div className="flex flex-col">
         {projectsProps.map((project, i) => (
           <FeaturedProject
-            {...projectsProps}
+            {...project}
             className={`opacity-0 transition-all duration-500 ${
-              i % 2 == 0 ? 'translate-x-[25%]' : 'translate-x-[-25%]'
+              i % 2 == 0 ? 'translate-x-[25%]' : 'translate-x-[-25%] reverse-align'
             }`}
             key={i}
-            {...project}
           />
         ))}
       </div>
@@ -35,25 +23,18 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
   );
 };
 
-interface ProjectProps {
-  projectTitle: string;
-  description: string;
-  link: string;
-  picSrc: StaticImageData;
-  picAlt: string;
-  className: string;
-}
-
-const FeaturedProject: React.FC<ProjectProps> = ({
+const FeaturedProject: React.FC<ProjectProp> = ({
   projectTitle,
   description,
   link,
   picSrc,
+  width,
+  height,
   picAlt,
-  className,
+  className
 }) => {
   const projectRef = useRef<HTMLDivElement>(null);
-
+  
   useEffect(() => {
     let project = projectRef.current;
     const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
@@ -87,16 +68,18 @@ const FeaturedProject: React.FC<ProjectProps> = ({
         <h2 className="mb-4 w-3/4 text-xl tablet:w-full">
           <a href={link}>{projectTitle}</a>
         </h2>
-        <div className="rounded bg-sky-200 py-8 px-4 text-black shadow-lg dark:bg-[#1A273E] dark:text-slate-200">
+        <div className="description">
           <p>{description}</p>
         </div>
       </div>
-      <div className="absolute left-1/2 z-0 w-1/2 overflow-hidden rounded">
-        <Link href={link} className="group relative">
+      <div className={`img-container absolute z-0 left-1/2 w-1/2 overflow-hidden rounded`}>
+        <Link href={link} className="group">
           <Image
             alt={picAlt}
             src={picSrc}
             className="max-h-[275px] min-h-[100px] w-full object-cover transition duration-300 ease-in-out"
+            width={width}
+            height={height}
           />
           <div className="absolute inset-0 bg-black opacity-40 transition duration-300 ease-in-out group-hover:opacity-0"></div>
         </Link>
