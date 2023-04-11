@@ -1,0 +1,20 @@
+[
+    {
+        "projectTitle": "The Statesmen Podcast App",
+        "description": "A podcast app for the Statesmen Podcast that dynamically reads the show's RSS feed for the most updated episode. Built with React, MaterialUI and Redis.",
+        "link": "https://statesmenpodcast.com",
+        "picSrc": "/../public/statesmen.png",
+        "width": 1235,
+        "height": 640,
+        "picAlt": "A screenshot of the home page of the Statesmen Podcast App."
+    },
+    {
+        "projectTitle": "Aether",
+        "description": "Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.",
+        "link": "https://aether.timferrari.com",
+        "picSrc": "/../public/aether.png",
+        "width": 1000,
+        "height": 633,
+        "picAlt": "A screenshot of the home page of the Aether App."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+      "jobTitle": "Software Engineer",
+      "company": "Critical Mass",
+      "companyLink": "https://www.criticalmass.com/",
+      "startDate": "March 2022",
+      "endDate": "Present",
+      "description": [
+        "Develop and implement modern, performant, and maintainable code for a wide range of client and internal projects, adhering to best practices and industry standards",
+        "Demonstrate proficiency in multiple languages, platforms, frameworks, and content management systems, such as JavaScript, TypeScript, React, Tailwind, Adobe Experience Manager, and Salesforce",
+        "Liaise with multi-disciplinary teams of engineers, designers, producers, and clients, offering technical guidance and ensuring the delivery of top-quality products that exceed expectations"
+      ]
+    },
+    {
+      "jobTitle": "Software Engineer Intern",
+      "company": "Critical Mass",
+      "companyLink": "https://www.criticalmass.com/",
+      "startDate": "September 2021",
+      "endDate": "March 2022",
+      "description": [
+        "Designed, developed, and maintained code for in-house and client websites, utilizing technologies such as HTML, CSS, Less, JavaScript, and jQuery while adhering to best practices",
+        "Introduced and implemented a range of development tools and automation scripts to streamline workflows and bolster the efficiency of the development team",
+        "Gained valuable industry experience by shadowing and pair programming with seasoned engineers and executing a variety of small-scale independent projects, demonstrating adaptability and eagerness to learn"
+      ]
+    },
+    {
+      "jobTitle": "Film Production",
+      "company": "Freelance",
+      "companyLink": "/",
+      "startDate": "May 2016",
+      "endDate": "March 2020",
+      "description": [
+        "Collaborated with local commercial and wedding clients to capture and edit high-quality videos that met their specific needs and exceeded their expectations",
+        "Directed and produced a diverse portfolio of short films and music videos, showcasing creativity and technical proficiency that earned recognition in independent festivals",
+        "Coordinated production logistics and assisted with creative development for high-profile clients, including Rihanna, Tove Lo, Ulta, and others, contributing to successful and memorable projects"
+      ]
+    }
+  ]
