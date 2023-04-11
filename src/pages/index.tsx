@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import statesmenPic from '../../public/statesmen.png';
-import aetherPic from '../../public/aether.png';
+import { JobProp, ProjectsProps, ProjectProp } from '../lib/types';
 
 import { Roboto_Mono } from 'next/font/google';
 import {
@@ -18,26 +17,7 @@ import {
 // If loading a variable font, you don't need to specify the font weight
 const roboto = Roboto_Mono({ subsets: ['latin'] });
 
-const projectProps = [
-  {
-    projectTitle: 'The Statesmen Podcast App',
-    description:
-      "A podcast app for the Statesmen Podcast that dynamically reads the show's RSS feed for the most updated episode. Built with React, MaterialUI and Redis.",
-    link: 'https://statesmenpodcast.com',
-    picSrc: statesmenPic,
-    picAlt: 'A screenshot of the home page of the Statesmen Podcast App.',
-  },
-  {
-    projectTitle: 'Aether',
-    description:
-      'Aether is a multiplayer music game built with Threejs, React Socket.io, and Firebase enabling users to play music in realtime and save creations to their profile.',
-    link: 'https://aether.timferrari.com',
-    picSrc: aetherPic,
-    picAlt: 'A screenshot of the home page of the Aether App.',
-  },
-];
-
-export default function Home(): JSX.Element {
+export default function Home({projects, jobs}: {projects: ProjectProp[], jobs: JobProp[]}): JSX.Element {
   return (
     <>
       <Head>
@@ -58,8 +38,8 @@ export default function Home(): JSX.Element {
         <Navbar />
         <Hero />
         <About />
-        <Work />
-        <Projects projectsProps={projectProps} />
+        <Work jobs={jobs}/>
+        <Projects projectsProps={projects} />
         <Contact />
         <footer>
           <div className="mx-auto max-w-5xl pb-8 text-center tablet:px-10">
@@ -81,4 +61,13 @@ export default function Home(): JSX.Element {
       </main>
     </>
   );
+}
+
+export async function getStaticProps(){
+  return {
+    props: {
+      projects: require('../content/projects.json') as ProjectProp[],
+      jobs: require('../content/jobs.json') as JobProp[]
+    }
+  }
 }
