@@ -22,8 +22,6 @@ const About: React.FC = () => {
     'Git',
   ];
 
-  //function for intersection observer
-
   useEffect(() => {
     let about = aboutRef.current;
     const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
