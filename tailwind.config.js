@@ -13,6 +13,7 @@ module.exports = {
       },
       colors: {
         "deep-blue": "#1A273E",
+        "primary": "rgb(var(--background-start-rgb))"
       },
 
       screens: {

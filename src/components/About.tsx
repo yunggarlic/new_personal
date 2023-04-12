@@ -49,7 +49,7 @@ const About: React.FC = () => {
       id="about"
       ref={aboutRef}
     >
-      <div className={`bg-fade space-y-4`}>
+      <div className={`bg-primary space-y-4`}>
         <h2>About Me</h2>
         <p className="">
           {

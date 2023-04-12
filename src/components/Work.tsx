@@ -64,7 +64,7 @@ const Job: React.FC<JobProp> = ({
       <p className="pb-4 text-sm">
         {startDate} - {endDate}
       </p>
-      <ul>
+      <ul className="bg-primary">
         {description.map((desc, i) => (
           <li className="pb-4 text-sm last:pb-0" key={i}>
             {desc}
