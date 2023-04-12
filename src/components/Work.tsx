@@ -5,8 +5,8 @@ import { JobProp, JobProps } from "../lib/types";
 const Work: React.FC<JobProps> = ({ jobs }) => {
   const [currentJob, setCurrentJob] = useState(0);
   return (
-    <section className="bg-fade flex h-screen items-center" id="work">
-      <div className="bg-fade my-auto w-full tablet:h-[unset]">
+    <section className="bg-primary-gradient flex h-screen items-center" id="work">
+      <div className="my-auto w-full tablet:h-[unset]">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
           <div className="tab-list flex justify-between gap-4 tablet:mr-6 tablet:flex-col tablet:justify-start">

@@ -9,8 +9,7 @@ module.exports = {
       },
       backgroundImage: {
         "stars-tall": "url('/StarsTall.png')",
-        "gradient-radial":
-          "radial-gradient(rgb(var(--background-start-rgb, #1A273E)), transparent)",
+        
       },
       colors: {
         "deep-blue": "#1A273E",
@@ -20,7 +19,9 @@ module.exports = {
         tablet: "768px",
         desktop: "1280px",
       },
-      transitionProperty: {},
+      transitionProperty: {
+        "about": "transform, opacity"
+      },
     },
   },
   plugins: [],

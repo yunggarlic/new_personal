@@ -32,7 +32,7 @@ const ThemeToggle = () => {
         htmlFor="checkbox"
       >
         <input type="checkbox" ref={checkbox} className="invisible" id="toggleTheme" />
-        <div className="slider flex rounded bottom-0 cursor-pointer left-0 absolute right-0 top-0 transition"><Moon /><Sun/></div>
+        <div className="slider flex bg-sky-200 shadow-md rounded bottom-0 cursor-pointer left-0 absolute right-0 top-0 transition"><Moon /><Sun/></div>
       </label>
     </div>
   );
