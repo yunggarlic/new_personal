@@ -70,8 +70,8 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
             </button>
           </div>
           <div
-            className={`mobile-menu ${
-              mobileMenuOpen ? 'block' : 'hidden'
+            className={`${
+              mobileMenuOpen ? 'block mobile-menu' : 'hidden'
             } absolute top-full left-0 w-full space-y-4 md:static md:flex md:bg-transparent tablet:space-x-4 tablet:space-y-0`}
           >
             <a
