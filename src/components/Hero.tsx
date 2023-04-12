@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         <h3 className="">I help cobble together the web.</h3>
         <p className="pt-8 tablet:w-3/4">
           I am a software engineer specializing in building exceptional digital
-          experiences. Currently, I am building solutions at{' '}
+          experiences. Currently, I am building solutions at{" "}
           <Link className="hover:border-b" href="https://criticalmass.com">
             Critical Mass.
           </Link>

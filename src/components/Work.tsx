@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import {JobProp, JobProps} from '../lib/types';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { JobProp, JobProps } from "../lib/types";
 
-const Work: React.FC<JobProps> = ({jobs}) => {
+const Work: React.FC<JobProps> = ({ jobs }) => {
   const [currentJob, setCurrentJob] = useState(0);
   return (
-    <section className="flex h-screen items-center bg-fade" id="work">
-      <div className="my-auto w-full bg-fade tablet:h-[unset]">
+    <section className="bg-fade flex h-screen items-center" id="work">
+      <div className="bg-fade my-auto w-full tablet:h-[unset]">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
           <div className="tab-list flex justify-between gap-4 tablet:mr-6 tablet:flex-col tablet:justify-start">
@@ -16,8 +16,8 @@ const Work: React.FC<JobProps> = ({jobs}) => {
                 onClick={() => setCurrentJob(i)}
                 className={`${
                   currentJob === i
-                    ? 'active bg-blue-500/10 dark:bg-deep-blue'
-                    : ''
+                    ? "active bg-blue-500/10 dark:bg-deep-blue"
+                    : ""
                 } work-tab`}
               >
                 {job.jobTitle}
@@ -30,8 +30,8 @@ const Work: React.FC<JobProps> = ({jobs}) => {
                 {...job}
                 className={`transition-opacity duration-500 ${
                   currentJob === i
-                    ? 'visible h-full opacity-100'
-                    : 'invisible h-0 opacity-0'
+                    ? "visible h-full opacity-100"
+                    : "invisible h-0 opacity-0"
                 } `}
                 key={i}
               />
@@ -57,7 +57,7 @@ const Job: React.FC<JobProp> = ({
       <h3 className="leading-8">
         <span>{jobTitle} </span>
         <Link href={companyLink} className="block text-lg">
-          {' '}
+          {" "}
           {company}
         </Link>
       </h3>

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import {ProjectProp, ProjectsProps} from '../lib/types'
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ProjectProp, ProjectsProps } from "../lib/types";
 
 const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
   return (
@@ -13,7 +13,9 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
           <FeaturedProject
             {...project}
             className={`opacity-0 transition-all duration-500 ${
-              i % 2 == 0 ? 'translate-x-[25%]' : 'translate-x-[-25%] reverse-align'
+              i % 2 == 0
+                ? "translate-x-[25%]"
+                : "reverse-align translate-x-[-25%]"
             }`}
             key={i}
           />
@@ -31,28 +33,28 @@ const FeaturedProject: React.FC<ProjectProp> = ({
   width,
   height,
   picAlt,
-  className
+  className,
 }) => {
   const projectRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     let project = projectRef.current;
     const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           project!.classList.remove(
-            'opacity-0',
-            'translate-x-[25%]',
-            'translate-x-[-25%]'
+            "opacity-0",
+            "translate-x-[25%]",
+            "translate-x-[-25%]"
           );
-          project!.classList.add('opacity-100', 'translate-x-0');
+          project!.classList.add("opacity-100", "translate-x-0");
           observer.unobserve(project!);
         }
       });
     };
     const observer = new IntersectionObserver(intersectionCallback, {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.4,
     });
 
@@ -66,13 +68,20 @@ const FeaturedProject: React.FC<ProjectProp> = ({
     >
       <div className="z-10 w-4/5 tablet:w-3/5">
         <h2 className="mb-4 w-3/4 text-xl tablet:w-full">
-          <a href={link}>{projectTitle}</a>
+          <a
+            className="border-transparent transition-all hover:border-b hover:border-white"
+            href={link}
+          >
+            {projectTitle}
+          </a>
         </h2>
         <div className="rounded bg-sky-200 py-8 px-4 text-black shadow-lg dark:bg-deep-blue dark:text-slate-200">
           <p>{description}</p>
         </div>
       </div>
-      <div className={`img-container absolute z-0 left-1/2 w-1/2 overflow-hidden rounded`}>
+      <div
+        className={`img-container absolute left-1/2 z-0 w-1/2 overflow-hidden rounded`}
+      >
         <Link href={link} className="group">
           <Image
             alt={picAlt}

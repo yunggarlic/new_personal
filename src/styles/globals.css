@@ -148,7 +148,7 @@ a {
 }
 
 .bg-fade{
-  @apply dark:bg-[#221f20]/[0.6];
+  @apply bg-gradient-radial;
 }
 
 @media (prefers-color-scheme: dark) {
