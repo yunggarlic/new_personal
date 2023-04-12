@@ -16,5 +16,14 @@
         "width": 1000,
         "height": 633,
         "picAlt": "A screenshot of the home page of the Aether App."
+    },
+    {
+        "projectTitle": "TYGKO - Musician Porfolio",
+        "description": "A musician portfolio built with React and Threejs. This project was built for a musician friend of mine who wanted a simple way to showcase his music and connect with fans.",
+        "link": "https://tygko.timferrari.com",
+        "picSrc": "/../public/tygko.png",
+        "width": 887,
+        "height": 766,
+        "picAlt": "A screenshot of the home page of the TYGKO App."
     }
 ]

@@ -12,6 +12,7 @@ const About: React.FC = () => {
     'TypeScript',
     'React',
     'NextJS',
+    'Tailwind',
     'Express',
     'NodeJS',
     'Python',
