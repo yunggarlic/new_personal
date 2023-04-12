@@ -6,20 +6,19 @@
   --nav-height: 80px;
   --max-width: 1100px;
   --border-radius: 12px;
+  --foreground-rgb: 0,0,0;
 
   --nav-bg-color: 214, 219, 220;
   --nav-color: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 34, 31, 32;
-    --background-end-rgb: 0, 0, 0;
-    --nav-bg-color: 34, 31, 32;
-    --nav-color: 255, 255, 255;
-  }
+:root.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 34, 31, 32;
+  --background-end-rgb: 0, 0, 0;
+  --nav-bg-color: 34, 31, 32;
+  --nav-color: 255, 255, 255;
 }
 
 * {
@@ -37,6 +36,8 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-start-rgb));
+
+  transition: background-color 0.2s, color 0.2s;
 }
 
 nav {
@@ -133,22 +134,47 @@ a {
   @apply w-full rounded p-4 text-left text-xs transition-all hover:bg-blue-500/10 dark:hover:bg-deep-blue tablet:h-12 tablet:whitespace-nowrap tablet:px-6;
 }
 
-
-.description{
+.description {
   @apply rounded bg-sky-200 py-8 px-4 text-black shadow-lg dark:bg-[#1A273E] dark:text-slate-200;
 }
-.reverse-align{
+.reverse-align {
   @apply flex-row-reverse text-right;
 }
-.reverse-align .description{
+.reverse-align .description {
   @apply text-right;
 }
-.reverse-align .img-container{
+.reverse-align .img-container {
   @apply left-0;
 }
 
-.bg-fade{
+.bg-fade {
   @apply bg-gradient-radial;
+}
+
+.slider::before{
+  @apply rounded bg-black bottom-[4px] w-[26px] content-[""] h-[26px] left-[4px] absolute transition;
+
+}
+#toggleTheme + .slider::before{
+  transform: translateX(26px);
+}
+
+.dark #toggleTheme + .slider::before {
+  transform: translateX(0px);
+  @apply bg-white;
+  
+}
+
+#toggleTheme + .slider {
+  @apply bg-sky-200 shadow-md;
+}
+
+.dark #toggleTheme + .slider {
+  @apply bg-[rgb(var(--nav-bg-color))];
+}
+
+.sun rect, .sun g {
+  @apply fill-white
 }
 
 @media (prefers-color-scheme: dark) {

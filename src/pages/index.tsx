@@ -12,6 +12,7 @@ import {
   About,
   Work,
   Contact,
+  ThemeToggle
 } from '../components';
 
 // If loading a variable font, you don't need to specify the font weight
@@ -36,6 +37,7 @@ export default function Home({projects, jobs}: {projects: ProjectProp[], jobs: J
         className={`mx-auto max-w-5xl space-y-10 bg-stars-tall bg-right-top px-6 tablet:px-10 ${roboto.className}`}
       >
         <Navbar />
+        <ThemeToggle />
         <Hero />
         <About />
         <Work jobs={jobs}/>
