@@ -1,25 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import picSrc from "../../public/me.jpg";
-import Link from "next/link";
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import picSrc from '../../public/me.jpg';
+import Link from 'next/link';
 
 const About: React.FC = () => {
   const aboutRef = useRef<HTMLElement>(null);
   const [intersected, setIntersected] = useState<Boolean>(false);
 
   const skills = [
-    "Javascript",
-    "TypeScript",
-    "React",
-    "NextJS",
-    "Tailwind",
-    "Express",
-    "NodeJS",
-    "Python",
-    "Nginx",
-    "Linux",
-    "AEM (Adobe)",
-    "Git",
+    'Javascript',
+    'TypeScript',
+    'React',
+    'NextJS',
+    'Tailwind',
+    'Express',
+    'NodeJS',
+    'Python',
+    'Nginx',
+    'Linux',
+    'AEM (Adobe)',
+    'Git',
   ];
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const About: React.FC = () => {
     };
     const observer = new IntersectionObserver(intersectionCallback, {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.5,
     });
 
@@ -44,16 +44,16 @@ const About: React.FC = () => {
   return (
     <section
       className={`about flex translate-y-10 flex-col items-center space-y-8 opacity-0 transition-about tablet:flex-row ${
-        intersected ? "animate-up" : ""
+        intersected ? 'animate-up' : ''
       }`}
       id="about"
       ref={aboutRef}
     >
-      <div className={`bg-primary space-y-4`}>
+      <div className={`space-y-4 bg-primary`}>
         <h2>About Me</h2>
         <p className="">
           {
-            "I have always had a strong interest in computers, which have played a significant role in my life for as long as I can remember. Though I initially hesitated to transform this fascination into a career, it eventually became an undeniable calling."
+            'I have always had a strong interest in computers, which have played a significant role in my life for as long as I can remember. Though I initially hesitated to transform this fascination into a career, it eventually became an undeniable calling.'
           }
         </p>
         <p className="">
@@ -76,7 +76,7 @@ const About: React.FC = () => {
       </div>
       <div
         className={`about img-side min-w-[33%] max-w-[360px] translate-y-10  ${
-          intersected ? "animate-up" : ""
+          intersected ? 'animate-up' : ''
         }`}
       >
         <Image
