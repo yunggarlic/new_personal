@@ -6,7 +6,7 @@
   --nav-height: 80px;
   --max-width: 1100px;
   --border-radius: 12px;
-  --foreground-rgb: 0,0,0;
+  --foreground-rgb: 0, 0, 0;
 
   --nav-bg-color: 214, 219, 220;
   --nav-color: 0, 0, 0;
@@ -14,7 +14,7 @@
 }
 
 :root.dark {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 230, 230, 250;
   --background-start-rgb: 34, 31, 32;
   --background-end-rgb: 0, 0, 0;
   --nav-bg-color: 34, 31, 32;
@@ -152,26 +152,25 @@ a {
   @apply left-0;
 }
 
-.slider::before{
-  @apply rounded bg-black bottom-[4px] w-[26px] content-[""] h-[26px] left-[4px] absolute transition;
-
+.slider::before {
+  @apply absolute bottom-[4px] left-[4px] h-[26px] w-[26px] rounded bg-black transition content-[""];
 }
-#toggleTheme + .slider::before{
+#toggleTheme + .slider::before {
   transform: translateX(26px);
 }
 
 .dark #toggleTheme + .slider::before {
   transform: translateX(0px);
   @apply bg-white;
-  
 }
 
 .dark #toggleTheme + .slider {
   @apply bg-[rgb(var(--nav-bg-color))];
 }
 
-.sun rect, .sun g {
-  @apply fill-white
+.sun rect,
+.sun g {
+  @apply fill-white;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -13,7 +13,10 @@ const About: React.FC = () => {
     'React',
     'NextJS',
     'Tailwind',
+    'Vite',
+    'Webpack',
     'Express',
+    'Electron',
     'NodeJS',
     'Python',
     'Nginx',
@@ -70,7 +73,11 @@ const About: React.FC = () => {
         </p>
         <ul className="skills-list grid auto-rows-fr grid-cols-3 gap-4">
           {skills.map((skill, index) => {
-            return <li key={index}>{skill}</li>;
+            return (
+              <li className={`text-test`} key={index}>
+                {skill}
+              </li>
+            );
           })}
         </ul>
       </div>
