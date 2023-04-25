@@ -44,7 +44,7 @@ export default function Home({projects, jobs}: {projects: ProjectProp[], jobs: J
         <Projects projectsProps={projects} />
         <Contact />
         <footer>
-          <div className="mx-auto max-w-5xl pb-8 text-center tablet:px-10">
+          <div className="text-xs mx-auto max-w-5xl pb-8 text-center tablet:px-10">
             <div>
               <Link className="hover:border-b" href="/">
                 Built by Tim Ferrari

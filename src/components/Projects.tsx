@@ -62,14 +62,15 @@ const FeaturedProject: React.FC<ProjectProp> = ({
   }, []);
 
   return (
-    <div
-      ref={projectRef}
-      className={`relative mb-12 flex h-72 py-4 ${className}`}
-    >
-      <div className="z-10 w-4/5 tablet:w-3/5">
-        <h2 className="mb-4 w-3/4 text-xl tablet:w-full">
+    <div ref={projectRef} className={`relative mb-12 flex py-4 ${className}`}>
+      <div
+        className={`z-10 flex w-4/5 flex-col tablet:w-3/5 ${
+          className.includes("reverse-align") ? "items-end" : ""
+        }`}
+      >
+        <h2 className="mb-4 w-fit text-xl">
           <a
-            className="border-transparent transition-all hover:border-b hover:border-white"
+            className="block border-transparent transition-all hover:border-b hover:border-white"
             href={link}
           >
             {projectTitle}
