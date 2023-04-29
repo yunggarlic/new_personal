@@ -6,8 +6,11 @@ import Swiper from 'swiper';
 const Work: React.FC<JobProps> = ({ jobs }) => {
   const [currentJob, setCurrentJob] = useState(0);
   return (
-    <section className="bg-primary-gradient flex items-center" id="work">
-      <div className="h-scren my-auto w-full tablet:h-[unset]">
+    <section
+      className="bg-primary-gradient flex items-center tablet:h-screen"
+      id="work"
+    >
+      <div className="my-auto w-full">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
           <div className="tab-list swiper-container flex flex-col justify-between gap-4 tablet:mr-6 tablet:justify-start">
