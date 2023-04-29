@@ -12,27 +12,9 @@ module.exports = {
       },
       colors: {
         'deep-blue': '#1A273E',
-        primary: 'rgb(var(--background-start-rgb))',
-        test: () => {
-          const colors = [
-            '#FFC0CB',
-            '#F4A460',
-            '#FFE4B5',
-            '#D3D3D3',
-            '#90EE90',
-            '#ADD8E6',
-            '#E0FFFF',
-            '#B0E0E6',
-            '#87CEFA',
-            '#9370DB',
-            '#FFB6C1',
-            '#FFA07A',
-            '#FFEFD5',
-            '#BDB76B',
-            '#E6E6FA',
-          ];
-          return colors[Math.floor(Math.random() * colors.length)];
-        },
+        primary: 'rgba(var(--background-start-rgb), 0.1)',
+        primaryDark: 'rgba(var(--background-start-rgb), 0.6)',
+        test: '#FFA07A'
       },
 
       screens: {

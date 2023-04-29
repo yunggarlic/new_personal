@@ -56,6 +56,10 @@ main {
   margin-top: var(--nav-height);
 }
 
+main > section {
+  @apply bg-primary;
+}
+
 html {
   font-size: 16px;
   line-height: 24px;
