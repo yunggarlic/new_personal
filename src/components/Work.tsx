@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { JobProp, JobProps } from '../lib/types';
-import Swiper from 'swiper';
 
 const Work: React.FC<JobProps> = ({ jobs }) => {
   const [currentJob, setCurrentJob] = useState(0);
@@ -13,7 +12,7 @@ const Work: React.FC<JobProps> = ({ jobs }) => {
       <div className="my-auto w-full">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
-          <div className="tab-list swiper-container flex flex-col justify-between gap-4 tablet:mr-6 tablet:justify-start">
+          <div className="tab-list flex flex-col justify-between gap-4 tablet:mr-6 tablet:justify-start">
             {jobs.map((job, i) => (
               <button
                 key={i}
