@@ -56,8 +56,8 @@ main {
   margin-top: var(--nav-height);
 }
 
-main > section {
-  @apply bg-primary;
+main > div > section {
+  @apply py-8;
 }
 
 html {
