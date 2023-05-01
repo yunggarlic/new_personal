@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ProjectProp, ProjectsProps } from "../lib/types";
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ProjectProp, ProjectsProps } from '../lib/types';
 
 const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
   return (
@@ -12,10 +12,10 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
         {projectsProps.map((project, i) => (
           <FeaturedProject
             {...project}
-            className={`opacity-0 transition-all duration-500 ${
+            className={`featured-project opacity-0 ${
               i % 2 == 0
-                ? "translate-x-[25%]"
-                : "reverse-align translate-x-[-25%]"
+                ? 'translate-x-[25%]'
+                : 'reverse-align translate-x-[-25%]'
             }`}
             key={i}
           />
@@ -43,18 +43,18 @@ const FeaturedProject: React.FC<ProjectProp> = ({
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           project!.classList.remove(
-            "opacity-0",
-            "translate-x-[25%]",
-            "translate-x-[-25%]"
+            'opacity-0',
+            'translate-x-[25%]',
+            'translate-x-[-25%]'
           );
-          project!.classList.add("opacity-100", "translate-x-0");
+          project!.classList.add('opacity-100', 'translate-x-0');
           observer.unobserve(project!);
         }
       });
     };
     const observer = new IntersectionObserver(intersectionCallback, {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.4,
     });
 
@@ -65,18 +65,18 @@ const FeaturedProject: React.FC<ProjectProp> = ({
     <div ref={projectRef} className={`relative mb-12 flex py-4 ${className}`}>
       <div
         className={`z-10 flex w-4/5 flex-col tablet:w-3/5 ${
-          className.includes("reverse-align") ? "items-end" : ""
+          className.includes('reverse-align') ? 'items-end' : ''
         }`}
       >
-        <h2 className="mb-4 w-fit text-xl">
+        <h2 className="mb-4 h-fit w-fit py-2 text-xl">
           <a
-            className="block border-transparent transition-all hover:border-b hover:border-white"
+            className="block border-transparent transition-[border-color] duration-200 hover:border-b hover:border-white"
             href={link}
           >
             {projectTitle}
           </a>
         </h2>
-        <div className="rounded bg-sky-200 py-8 px-4 text-black shadow-lg dark:bg-deep-blue dark:text-slate-200">
+        <div className="project-transitions rounded bg-sky-200 py-8 px-4 text-black shadow-lg dark:bg-deep-blue dark:text-slate-200">
           <p>{description}</p>
         </div>
       </div>
@@ -87,11 +87,11 @@ const FeaturedProject: React.FC<ProjectProp> = ({
           <Image
             alt={picAlt}
             src={picSrc}
-            className="max-h-[275px] min-h-[100px] w-full object-cover transition duration-300 ease-in-out"
+            className="max-h-[275px] min-h-[100px] w-full object-cover"
             width={width}
             height={height}
           />
-          <div className="absolute inset-0 bg-black opacity-40 transition duration-300 ease-in-out group-hover:opacity-0"></div>
+          <div className="absolute inset-0 bg-black opacity-40 transition-opacity duration-300 ease-in-out group-hover:opacity-0"></div>
         </Link>
       </div>
     </div>

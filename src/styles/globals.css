@@ -33,17 +33,16 @@ body {
   overflow-x: hidden;
 }
 
-body {
+body,
+nav {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-start-rgb));
 
-  transition: background-color 0.2s, color 0.2s;
+  transition: color 0.2s, background-color 0.2s;
 }
 
 nav {
   height: var(--nav-height);
-  background-color: rgb(var(--nav-bg-color));
-  color: rgb(var(--nav-color));
 }
 
 .mobile-menu {
@@ -128,7 +127,11 @@ a {
 }
 
 .about {
-  transition: opacity 1s, transform 1s, color 0.2s, background-color 0.2s;
+  transition: opacity 1s, transform 1s;
+}
+
+.job-transitions {
+  transition: opacity 0.5s;
 }
 
 .animate-up {
@@ -140,7 +143,21 @@ a {
   transform: translateX(0);
 }
 .work-tab {
-  @apply w-full rounded p-4 text-left text-xs hover:bg-blue-500/10 dark:hover:bg-deep-blue tablet:h-12 tablet:whitespace-nowrap tablet:px-6;
+  @apply w-full rounded p-4 text-left text-xs hover:bg-sky-200 dark:hover:bg-deep-blue tablet:h-12 tablet:whitespace-nowrap tablet:px-6;
+
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.project-transitions {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.featured-project {
+  transition: opacity 0.2s, transform 0.5s;
+}
+
+.nav-transitions {
+  transition: transform 0.3s, background-color 0.2s, color 0.2s;
 }
 
 .description {

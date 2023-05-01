@@ -5,10 +5,7 @@ import { JobProp, JobProps } from '../lib/types';
 const Work: React.FC<JobProps> = ({ jobs }) => {
   const [currentJob, setCurrentJob] = useState(0);
   return (
-    <section
-      className="bg-primary-gradient flex items-center tablet:h-screen"
-      id="work"
-    >
+    <section className="flex items-center tablet:h-screen" id="work">
       <div className="my-auto w-full">
         <h2 className="pb-8">Work Experience</h2>
         <div className="work-inner flex h-full flex-col space-y-4 tablet:flex-row tablet:space-y-0">
@@ -18,9 +15,7 @@ const Work: React.FC<JobProps> = ({ jobs }) => {
                 key={i}
                 onClick={() => setCurrentJob(i)}
                 className={`${
-                  currentJob === i
-                    ? 'active bg-blue-500/10 dark:bg-deep-blue'
-                    : ''
+                  currentJob === i ? 'active bg-sky-200  dark:bg-deep-blue' : ''
                 } work-tab`}
               >
                 {job.jobTitle}
@@ -31,7 +26,7 @@ const Work: React.FC<JobProps> = ({ jobs }) => {
             {jobs.map((job, i) => (
               <Job
                 {...job}
-                className={`transition-opacity duration-500 ${
+                className={`job-transitions ${
                   currentJob === i
                     ? 'visible h-full opacity-100'
                     : 'invisible h-0 opacity-0'

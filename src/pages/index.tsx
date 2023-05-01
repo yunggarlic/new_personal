@@ -1,9 +1,9 @@
-import Head from "next/head";
-import Link from "next/link";
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { JobProp, ProjectsProps, ProjectProp } from "../lib/types";
+import { JobProp, ProjectsProps, ProjectProp } from '../lib/types';
 
-import { Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from 'next/font/google';
 import {
   Navbar,
   Hero,
@@ -13,10 +13,10 @@ import {
   Work,
   Contact,
   ThemeToggle,
-} from "../components";
+} from '../components';
 
 // If loading a variable font, you don't need to specify the font weight
-const roboto = Roboto_Mono({ subsets: ["latin"] });
+const roboto = Roboto_Mono({ subsets: ['latin'] });
 
 export default function Home({
   projects,
@@ -42,7 +42,7 @@ export default function Home({
       <main
         className={`mx-auto max-w-5xl bg-stars-tall bg-right-top ${roboto.className}`}
       >
-        <div className="w-full bg-primary dark:bg-primaryDark px-6 tablet:px-10 ">
+        <div className="w-full px-6 tablet:px-10 ">
           <Navbar />
           <ThemeToggle />
           <Hero />
@@ -76,8 +76,8 @@ export default function Home({
 export async function getStaticProps() {
   return {
     props: {
-      projects: require("../content/projects.json") as ProjectProp[],
-      jobs: require("../content/jobs.json") as JobProp[],
+      projects: require('../content/projects.json') as ProjectProp[],
+      jobs: require('../content/jobs.json') as JobProp[],
     },
   };
 }

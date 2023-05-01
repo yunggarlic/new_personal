@@ -46,13 +46,13 @@ const About: React.FC = () => {
 
   return (
     <section
-      className={`about flex translate-y-10 flex-col items-center space-y-8 opacity-0 transition-about tablet:flex-row ${
+      className={`about flex translate-y-10 flex-col items-center space-y-8 opacity-0 tablet:flex-row ${
         intersected ? 'animate-up' : ''
       }`}
       id="about"
       ref={aboutRef}
     >
-      <div className={`space-y-4 bg-primary`}>
+      <div className={`space-y-4`}>
         <h2>About Me</h2>
         <p className="">
           {

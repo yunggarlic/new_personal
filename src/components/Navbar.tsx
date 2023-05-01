@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 interface NavProps {
   className?: string;
@@ -28,10 +28,10 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
       setPrevScrollPosition(currentScrollPosition);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPosition, mobileMenuOpen]);
 
@@ -41,8 +41,8 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
 
   return (
     <nav
-      className={`left-0 z-50 flex transform items-center shadow-lg transition-transform duration-300 ${className} ${
-        isHidden ? "fixed top-0 w-full -translate-y-full" : "fixed top-0 w-full"
+      className={`nav-transitions left-0 z-50 flex transform items-center shadow-lg ${className} ${
+        isHidden ? 'fixed top-0 w-full -translate-y-full' : 'fixed top-0 w-full'
       }`}
     >
       <div className="mx-auto w-full max-w-5xl px-6 tablet:px-10">
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
           </div>
           <div
             className={`${
-              mobileMenuOpen ? "mobile-menu block" : "hidden"
+              mobileMenuOpen ? 'mobile-menu block' : 'hidden'
             } absolute top-full left-0 w-full space-y-4 md:static md:flex md:bg-transparent tablet:space-x-4 tablet:space-y-0`}
           >
             <a
