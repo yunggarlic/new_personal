@@ -37,7 +37,7 @@ export default function Home({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/TF_WB.png" />
       </Head>
       <main
         className={`mx-auto max-w-5xl bg-stars-tall bg-right-top ${roboto.className}`}
