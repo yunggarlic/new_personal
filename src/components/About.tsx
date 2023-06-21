@@ -74,7 +74,7 @@ const About: React.FC = () => {
         <ul className="skills-list grid auto-rows-fr grid-cols-3 gap-4">
           {skills.map((skill, index) => {
             return (
-              <li className={`text-test`} key={index}>
+              <li className={`text-test dark:text-testDark`} key={index}>
                 {skill}
               </li>
             );

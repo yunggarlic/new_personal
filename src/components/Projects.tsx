@@ -70,7 +70,7 @@ const FeaturedProject: React.FC<ProjectProp> = ({
       >
         <h2 className="mb-4 h-fit w-fit py-2 text-xl">
           <a
-            className="block border-transparent transition-[border-color] duration-200 hover:border-b hover:border-white"
+            className="block border-transparent transition-[border-color] duration-200 border-b hover:border-white"
             href={link}
           >
             {projectTitle}

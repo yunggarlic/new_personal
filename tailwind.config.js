@@ -14,7 +14,7 @@ module.exports = {
         'deep-blue': '#1A273E',
         primary: 'rgba(var(--background-start-rgb), 0.1)',
         primaryDark: 'rgba(var(--background-start-rgb), 0.6)',
-        test: '#FFA07A'
+        testDark: '#00A07A'
       },
 
       screens: {
