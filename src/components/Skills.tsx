@@ -8,14 +8,10 @@ const Skills: React.FC = () => {
         <div>
           <h3 className="mb-2 text-2xl">Frontend</h3>
           <ul className="list-inside list-disc">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
             <li>TypeScript</li>
-            <li>React</li>
+            <li>JavaScript</li>
             <li>Next.js</li>
-            <li>Angular</li>
-            <li>Vue</li>
+            <li>React</li>
           </ul>
         </div>
         <div>
