@@ -1,54 +1,35 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import picSrc from '../../public/me.jpg';
-import Link from 'next/link';
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import picSrc from "../../public/me.jpg";
+import Link from "next/link";
 
 const About: React.FC = () => {
   const aboutRef = useRef<HTMLElement>(null);
   const [intersected, setIntersected] = useState<Boolean>(false);
 
   const skills = [
-    'Javascript',
-    'TypeScript',
-    'React',
-    'NextJS',
-    'Tailwind',
-    'Vite',
-    'Webpack',
-    'Express',
-    'Electron',
-    'NodeJS',
-    'Python',
-    'Nginx',
-    'Linux',
-    'AEM (Adobe)',
-    'Git',
+    "Javascript",
+    "TypeScript",
+    "React",
+    "NextJS",
+    "Tailwind",
+    "Vite",
+    "Webpack",
+    "Express",
+    "Electron",
+    "NodeJS",
+    "Python",
+    "Nginx",
+    "Linux",
+    "AEM (Adobe)",
+    "Git",
   ];
-
-  useEffect(() => {
-    let about = aboutRef.current;
-    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIntersected(true);
-          observer.unobserve(about!);
-        }
-      });
-    };
-    const observer = new IntersectionObserver(intersectionCallback, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    });
-
-    observer.observe(about!);
-  }, []);
 
   return (
     <section
-      className={`about flex translate-y-10 flex-col items-center space-y-8 opacity-0 tablet:flex-row ${
-        intersected ? 'animate-up' : ''
-      }`}
+      className={
+        "about flex translate-y-10 flex-col items-center space-y-8 tablet:flex-row"
+      }
       id="about"
       ref={aboutRef}
     >
@@ -56,7 +37,7 @@ const About: React.FC = () => {
         <h2>About Me</h2>
         <p className="">
           {
-            'I have always had a strong interest in computers, which have played a significant role in my life for as long as I can remember. Though I initially hesitated to transform this fascination into a career, it eventually became an undeniable calling.'
+            "I have always had a strong interest in computers, which have played a significant role in my life for as long as I can remember. Though I initially hesitated to transform this fascination into a career, it eventually became an undeniable calling."
           }
         </p>
         <p className="">
@@ -83,7 +64,7 @@ const About: React.FC = () => {
       </div>
       <div
         className={`about img-side min-w-[33%] max-w-[360px] translate-y-10  ${
-          intersected ? 'animate-up' : ''
+          intersected ? "animate-up" : ""
         }`}
       >
         <Image
