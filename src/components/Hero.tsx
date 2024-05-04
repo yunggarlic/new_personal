@@ -1,7 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ThemeContext } from "@/lib/context";
+import { useContext } from "react";
 
 const Hero: React.FC = () => {
+  const theme = useContext(ThemeContext);
   return (
     <section className="hero h-screen-minus-nav">
       <div className="text-side flex h-full flex-col justify-center">
@@ -18,6 +22,28 @@ const Hero: React.FC = () => {
         <p className="pt-8">
           This website is served to you from under my couch.
         </p>
+        <div className="mt-10 flex flex-row items-center gap-4">
+          <a target="_blank" href="https://github.com/yunggarlic">
+            <Image
+              src={`/github-mark${theme === "dark" ? "-white" : ""}.svg`}
+              alt="Github Logo"
+              width={40}
+              height={40}
+              className="dark:fill-white"
+            />
+          </a>
+          <div className="h-[40px] w-[40px]">
+            <a target="_blank" href="https://linkedin.com/in/timferrari">
+              <Image
+                src="/LI-In-Bug.png"
+                alt="LinkedIn Logo"
+                className="w-auto"
+                width={40}
+                height={40}
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
