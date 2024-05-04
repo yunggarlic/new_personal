@@ -1,36 +1,39 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Moon from './icons/Moon';
-import Sun from './icons/Sun';
+import React, { useEffect, useRef, useContext } from "react";
+import Moon from "./icons/Moon";
+import Sun from "./icons/Sun";
+import { ThemeContext } from "../lib/context";
 
-const ThemeToggle = () => {
-  const [theme, setTheme] = useState('light');
+const ThemeToggle = ({ setTheme }: { setTheme: Function }) => {
   const checkbox = useRef<HTMLInputElement>(null);
-
+  const theme = useContext(ThemeContext);
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
     }
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-      setTheme('dark');
-
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
     } else {
-      document.documentElement.classList.remove('dark')
-      setTheme('light');
+      document.documentElement.classList.remove("dark");
+      setTheme("light");
     }
   }, []);
 
   const handleToggle = () => {
     if (checkbox.current) checkbox.current.checked = !checkbox.current.checked;
-    if (theme === 'light') {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark'
+    if (theme === "light") {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
     } else {
-      setTheme('light');
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light'
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
     }
   };
 

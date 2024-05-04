@@ -1,9 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import { ThemeContext } from "@/lib/context";
 
-import { JobProp, ProjectsProps, ProjectProp } from '../lib/types';
+import { JobProp, ProjectsProps, ProjectProp } from "../lib/types";
+import { useState } from "react";
 
-import { Roboto_Mono } from 'next/font/google';
+import { Roboto_Mono } from "next/font/google";
 import {
   Navbar,
   Hero,
@@ -13,10 +14,11 @@ import {
   Work,
   Contact,
   ThemeToggle,
-} from '../components';
+  Footer,
+} from "../components";
 
 // If loading a variable font, you don't need to specify the font weight
-const roboto = Roboto_Mono({ subsets: ['latin'] });
+const roboto = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Home({
   projects,
@@ -25,8 +27,9 @@ export default function Home({
   projects: ProjectProp[];
   jobs: JobProp[];
 }): JSX.Element {
+  const [theme, setTheme] = useState("light");
   return (
-    <>
+    <ThemeContext.Provider value={theme}>
       <Head>
         <title>Tim Ferrari | Software Developer</title>
         <meta
@@ -40,44 +43,28 @@ export default function Home({
         <link rel="icon" href="/TF_WB.png" />
       </Head>
       <main
-        className={`mx-auto max-w-5xl bg-stars-tall bg-right-top ${roboto.className}`}
+        className={`mx-auto max-w-5xl bg-stars-tall bg-right-top  ${roboto.className}`}
       >
         <div className="w-full px-6 tablet:px-10 ">
           <Navbar />
-          <ThemeToggle />
+          <ThemeToggle setTheme={setTheme} />
           <Hero />
           <About />
           <Work jobs={jobs} />
           <Projects projectsProps={projects} />
           <Contact />
-          <footer>
-            <div className="mx-auto max-w-5xl pb-8 text-center text-xs tablet:px-10">
-              <div>
-                <Link className="hover:border-b" href="/">
-                  Built by Tim Ferrari
-                </Link>
-              </div>
-              <div>
-                <Link
-                  className="hover:border-b"
-                  href="https://brittanychiang.com/"
-                >
-                  Inspired by Brittany Chiang
-                </Link>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </main>
-    </>
+    </ThemeContext.Provider>
   );
 }
 
 export async function getStaticProps() {
   return {
     props: {
-      projects: require('../content/projects.json') as ProjectProp[],
-      jobs: require('../content/jobs.json') as JobProp[],
+      projects: require("../content/projects.json") as ProjectProp[],
+      jobs: require("../content/jobs.json") as JobProp[],
     },
   };
 }
