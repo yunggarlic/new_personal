@@ -87,12 +87,12 @@ const Navbar: React.FC<NavProps> = ({ className }) => {
             >
               Projects
             </a>
-            <a
+            {/* <a
               href="#skills"
               className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
             >
               Skills
-            </a>
+            </a> */}
             <a
               href="#contact"
               className="block py-2 pr-4  hover:text-gray-300 md:inline-block"
