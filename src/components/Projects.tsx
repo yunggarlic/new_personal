@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ProjectProp, ProjectsProps } from '../lib/types';
+"use client";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
+const Projects = ({ projectsProps }: ProjectsProps) => {
   return (
     <section className="space-y-4" id="projects">
       <h2 className="">Projects</h2>
@@ -14,8 +14,8 @@ const Projects: React.FC<ProjectsProps> = ({ projectsProps }) => {
             {...project}
             className={`featured-project opacity-0 ${
               i % 2 == 0
-                ? 'translate-x-[25%]'
-                : 'reverse-align translate-x-[-25%]'
+                ? "translate-x-[25%]"
+                : "reverse-align translate-x-[-25%]"
             }`}
             key={i}
           />
@@ -43,18 +43,18 @@ const FeaturedProject: React.FC<ProjectProp> = ({
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           project!.classList.remove(
-            'opacity-0',
-            'translate-x-[25%]',
-            'translate-x-[-25%]'
+            "opacity-0",
+            "translate-x-[25%]",
+            "translate-x-[-25%]"
           );
-          project!.classList.add('opacity-100', 'translate-x-0');
+          project!.classList.add("opacity-100", "translate-x-0");
           observer.unobserve(project!);
         }
       });
     };
     const observer = new IntersectionObserver(intersectionCallback, {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.4,
     });
 
@@ -65,12 +65,12 @@ const FeaturedProject: React.FC<ProjectProp> = ({
     <div ref={projectRef} className={`relative mb-12 flex py-4 ${className}`}>
       <div
         className={`z-10 flex w-4/5 flex-col tablet:w-3/5 ${
-          className.includes('reverse-align') ? 'items-end' : ''
+          className?.includes("reverse-align") ? "items-end" : ""
         }`}
       >
         <h2 className="mb-4 h-fit w-fit py-2 text-xl">
           <a
-            className="block border-transparent transition-[border-color] duration-200 border-b hover:border-white"
+            className="block border-b border-transparent transition-[border-color] duration-200 hover:border-white"
             href={link}
           >
             {projectTitle}

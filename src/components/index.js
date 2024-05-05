@@ -7,3 +7,4 @@ export { default as Work } from "./Work";
 export { default as Contact } from "./Contact";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as Footer } from "./Footer";
+export { default as ThemeWrapper } from "./ThemeWrapper"

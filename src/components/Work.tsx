@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { JobProp, JobProps } from '../lib/types';
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
-const Work: React.FC<JobProps> = ({ jobs }) => {
+const Work = ({ jobs }: JobProps) => {
   const [currentJob, setCurrentJob] = useState(0);
   return (
     <section className="flex items-center tablet:h-screen" id="work">
@@ -15,7 +15,7 @@ const Work: React.FC<JobProps> = ({ jobs }) => {
                 key={i}
                 onClick={() => setCurrentJob(i)}
                 className={`${
-                  currentJob === i ? 'active bg-sky-200  dark:bg-deep-blue' : ''
+                  currentJob === i ? "active bg-sky-200  dark:bg-deep-blue" : ""
                 } work-tab`}
               >
                 {job.jobTitle}
@@ -28,8 +28,8 @@ const Work: React.FC<JobProps> = ({ jobs }) => {
                 {...job}
                 className={`job-transitions ${
                   currentJob === i
-                    ? 'visible h-full opacity-100'
-                    : 'invisible h-0 opacity-0'
+                    ? "visible h-full opacity-100"
+                    : "invisible h-0 opacity-0"
                 } `}
                 key={i}
               />
@@ -55,7 +55,6 @@ const Job: React.FC<JobProp> = ({
       <h3 className="leading-8">
         <span>{jobTitle} </span>
         <Link href={companyLink} className="block text-lg">
-          {' '}
           {company}
         </Link>
       </h3>
